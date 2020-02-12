@@ -15,9 +15,9 @@
     'summary': 'Relate alternative references to the product',
     'data': [
         'security/ir.model.access.csv',
-        'views/product_product.xml',
-        'views/product_template.xml',
-        'views/res_partner.xml',
+        'views/product_product_views.xml',
+        'views/product_template_views.xml',
+        'views/res_partner_views.xml',
     ],
     'installable': True,
 }
