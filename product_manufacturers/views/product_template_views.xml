@@ -1,73 +1,73 @@
 <?xml version="1.0" ?>
-<openerp>
-    <data>
-        <record id="product_template_only_form_view" model="ir.ui.view">
-            <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_only_form_view" />
-            <field name="arch" type="xml">
-                <xpath expr="//page[4]" position="after">
-                    <page string="Homologs">
-                        <field name="manufacturer_ids"
-                            nolabel="1"
-                            widget="one2many_list">
-                            <tree editable="bottom">
-                                <field name="manufacturer_id" options='{"no_open": True, "no_create": True}'/>
-                                <field name="manufacturer_pref"/>
-                            </tree>
-                        </field>
-                    </page>
-                </xpath>
-            </field>
-        </record>
-
-        <record id="product_template_tree_view" model="ir.ui.view">
-            <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_tree_view"/>
-            <field name="arch" type="xml">
-                <field name="categ_id" position="before">
-                    <field name="manufacturer"/>
-                </field>
-            </field>
-        </record>
-
-        <record id="product_template_manufacturer_form_view" model="ir.ui.view">
-            <field name="model">product.template</field>
-            <field name="inherit_id" ref="product_manufacturer.product_template_manufacturer_form_view"/>
-            <field name="arch" type="xml">
-                <field name="manufacturer" position="attributes">
-                    <attribute name="domain">[('is_manufacturer','=',True)]</attribute>
-                    <attribute name="options">{"no_open": True, "no_create": True}</attribute>
-                </field>   
-            </field>
-        </record>
-
-        <record id="product_template_search_view" model="ir.ui.view">
-            <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_search_view"/>
-            <field name="arch" type="xml">
-                <field name="name" position="attributes">
-                    <attribute name="filter_domain">[
-                        '|',
-                        '|',
-                        '|',
-                        ('default_code', 'ilike', self),
-                        ('name', 'ilike', self),
-                        ('manufacturer_pref', 'ilike', self),
-                        ('manufacturer_ids', 'ilike', self)]</attribute>
-                </field>
-
-                <field name="name" position="after">
+<odoo>
+    <record id="product_template_only_form_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[4]" position="after">
+                <page string="Homologs">
                     <field name="manufacturer_ids"
-                        string="Exact Homolog"
-                        filter_domain="[('manufacturer_ids', '=', self)]"/>
-                    <field name="manufacturer_ids"
-                        string="Homolog Includes"
-                        filter_domain="[('manufacturer_ids', 'ilike', self)]"/>
-                    <field name="manufacturer_ids"
-                        string="Manufacturer of the Homolog"
-                        filter_domain="[('manufacturer_ids.manufacturer_id', 'ilike', self)]"/>
-                </field>
+                        nolabel="1"
+                        widget="one2many_list">
+                        <tree editable="bottom">
+                            <field name="manufacturer_id" options='{"no_open": True, "no_create": True}'/>
+                            <field name="manufacturer_pref"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_tree_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="categ_id" position="before">
+                <field name="manufacturer"/>
             </field>
-        </record>
-    </data>
-</openerp>
+        </field>
+    </record>
+
+    <record id="product_template_manufacturer_form_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_manufacturer.product_template_manufacturer_form_view"/>
+        <field name="arch" type="xml">
+             <field name="manufacturer" position="attributes">
+                <attribute name="domain">[('is_manufacturer','=',True)]</attribute>
+                <attribute name="options">{"no_open": True, "no_create": True}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_template_search_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">[
+                    '|',
+                    '|',
+                    '|',
+                    '|',
+                    ('default_code', 'ilike', self),
+                    ('name', 'ilike', self),
+                    ('barcode', 'ilike', self),
+                    ('manufacturer_pref', 'ilike', self),
+                    ('manufacturer_ids', 'ilike', self)]</attribute>
+            </field>
+
+            <field name="name" position="after">
+                <field name="manufacturer_ids"
+                    string="Exact Homolog"
+                    filter_domain="[('manufacturer_ids', '=', self)]"/>
+                <field name="manufacturer_ids"
+                    string="Homolog Includes"
+                    filter_domain="[('manufacturer_ids', 'ilike', self)]"/>
+                <field name="manufacturer_ids"
+                    string="Manufacturer of the Homolog"
+                    filter_domain="[('manufacturer_ids.manufacturer_id', 'ilike', self)]"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 22:18+0000\n"
 "PO-Revision-Date: 2020-02-12 22:18+0000\n"
@@ -46,6 +46,7 @@ msgid "Homolog Products with his Manufacturer"
 msgstr ""
 
 #. module: product_manufacturers
+#: model:ir.model.fields,field_description:product_manufacturers.field_product_product_manufacturer_ids
 #: model:ir.model.fields,field_description:product_manufacturers.field_product_template_manufacturer_ids
 #: model:ir.ui.view,arch_db:product_manufacturers.product_normal_form_view
 #: model:ir.ui.view,arch_db:product_manufacturers.product_template_only_form_view
@@ -59,6 +60,7 @@ msgstr ""
 
 #. module: product_manufacturers
 #: model:ir.model.fields,field_description:product_manufacturers.field_res_partner_is_manufacturer
+#: model:ir.model.fields,field_description:product_manufacturers.field_res_users_is_manufacturer
 msgid "Is a Manufacturer"
 msgstr ""
 

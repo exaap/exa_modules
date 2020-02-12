@@ -4,7 +4,7 @@
 
 {
     'name': 'Homolog Products with his Manufacturer',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'license': 'AGPL-3',
     'author': 'Joan Marín Github@JoanMarin',
     'website': 'https://github.com/exaap/exaap_modules',
