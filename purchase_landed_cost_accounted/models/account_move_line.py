@@ -32,7 +32,7 @@ class AccountMoveLine(models.Model):
         relation="account_move_line_distribution_line_expense_rel",
         column1="move_line_id",
         column2="distribution_line_expense_id",
-        string="Expenses in Journal Items")
+        string="Expenses of the Journal Item")
     value_without_landed_costs = fields.Float(
         string="Value Without Landed Costs",
         digits=dp.get_precision("Account"),

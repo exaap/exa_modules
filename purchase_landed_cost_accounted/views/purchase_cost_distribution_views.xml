@@ -25,6 +25,10 @@
                     </button>
                 </div>
             </xpath>
+
+            <field name="expense_lines" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', 'not in',  ['draft', 'calculated'])]}</attribute>
+            </field>
         </field>
     </record>
 </odoo>

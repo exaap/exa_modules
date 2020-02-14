@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="account.view_move_line_form" />
         <field name="arch" type="xml">
             <xpath expr="//page[2]" position="after">
-                <page string="Expenses in Journal Item">
+                <page string="Expenses of the Journal Item">
                     <group string="Amount">
                         <field name="value_without_landed_costs"/>
                         <field name="cost_ratio"/>

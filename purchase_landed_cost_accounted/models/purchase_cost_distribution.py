@@ -120,6 +120,6 @@ class PurchaseCostDistribution(models.Model):
     def action_cancel(self):
         super(PurchaseCostDistribution, self).action_cancel()
 
-        self.account_move_line_sum_cost_ratio()
+        self.get_value_with_landed_costs()
 
         return True
