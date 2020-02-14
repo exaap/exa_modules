@@ -5,7 +5,6 @@
 ======================================
 Homolog Products with his Manufacturer
 ======================================
----------------------
 
 The functionalities implemented are:
 ------------------------------------
