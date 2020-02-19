@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0-20191029\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 07:35+0000\n"
-"PO-Revision-Date: 2019-11-05 07:35+0000\n"
+"POT-Creation-Date: 2020-02-19 22:57+0000\n"
+"PO-Revision-Date: 2020-02-19 22:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,71 +19,86 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_product_barcode_ids
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_template_barcode_ids
 msgid "Additional Barcodes"
-msgstr "Códigos de Barras Adicionales"
+msgstr ""
 
 #. module: product_multiple_barcodes
-#: code:addons/product_multiple_barcodes/models/product_product.py:41
+#: code:addons/product_multiple_barcodes/models/product_product.py:24
 #, python-format
 msgid "Alert! The following barcodes are duplicated: %s"
-msgstr "Alerta! Los siguientes códigos de barras están duplicados: %s"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_name
 msgid "Barcode"
-msgstr "Código de Barras"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr ""
 
 #. module: product_multiple_barcodes
-#: code:addons/product_multiple_barcodes/models/product_barcode_multi.py:38
-#, python-format
-msgid "The '%s' barcode is already assigned.\n"
-"You will not be able to save this product if you do not remove the duplicated barcode."
-msgstr "El código de barras '%s' ya está asignado.\n"
-"No podrá guardar hasta que remueva los códigos de barras duplicados."
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_id
+msgid "ID"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr ""
+
+#. module: product_multiple_barcodes
+#: model:res.groups,name:product_multiple_barcodes.group_product_barcodes
+msgid "Manage Barcodes"
+msgstr ""
+
+#. module: product_multiple_barcodes
+#: model:ir.model,name:product_multiple_barcodes.model_product_barcode_multi
+msgid "Multiple Barcodes"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model,name:product_multiple_barcodes.model_product_product
 #: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_product_id
-#: model:ir.ui.view,arch_db:product_multiple_barcodes.product_variant_barcode_multi_view_search
 msgid "Product"
-msgstr "Producto"
+msgstr ""
 
 #. module: product_multiple_barcodes
 #: model:ir.model,name:product_multiple_barcodes.model_product_template
 msgid "Product Template"
-msgstr "Plantilla Producto"
+msgstr ""
 
 #. module: product_multiple_barcodes
-#: model:ir.model,name:product_multiple_barcodes.model_product_barcode_multi
-msgid "product.barcode.multi"
-msgstr "product.barcode.multi"
+#: code:addons/product_multiple_barcodes/models/product_barcode_multi.py:24
+#: code:addons/product_multiple_barcodes/models/product_template.py:20
+#, python-format
+msgid "The barcode: '%s' is already assigned to the product '%s'.\n"
+"You will not be able to save this product if you do not remove the duplicated barcode."
+msgstr ""
 
+#. module: product_multiple_barcodes
+#: code:addons/product_multiple_barcodes/models/product_barcode_multi.py:22
+#, python-format
+msgid "The barcode: '%s' is already assigned.\n"
+"You will not be able to save this product if you do not remove the duplicated barcode."
+msgstr ""

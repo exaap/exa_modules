@@ -9,6 +9,7 @@ from odoo.exceptions import ValidationError
 
 class ProductBarcodeMulti(models.Model):
     _name = 'product.barcode.multi'
+    _description = "Multiple Barcodes"
 
     name = fields.Char(string='Barcode', required=True)
     product_id = fields.Many2one(
