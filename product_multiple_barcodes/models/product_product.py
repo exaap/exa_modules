@@ -16,6 +16,20 @@ class ProductProduct(models.Model):
         inverse_name='product_id',
         string='Additional Barcodes')
 
+    @api.model
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
+        res = super(ProductProduct, self).name_search(name, args, operator, limit)
+        args = args or []
+        recs = []
+        domain = [('barcode_ids', operator, name)]
+
+        if name:
+            recs = self.search(domain + args, limit=limit)
+        else:
+            recs = self.search(args, limit=limit)
+
+        return res + recs.name_get()
+
     @api.multi
     def write(self, vals):
         """
