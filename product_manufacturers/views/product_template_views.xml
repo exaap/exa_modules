@@ -59,13 +59,13 @@
                 <field name="name" position="after">
                     <field name="manufacturer_ids"
                         string="Exact Homolog"
-                        filter_domain="[('manufacturer_ids', '=', self)]"/>
+                        filter_domain="['|', ('manufacturer_ids', '=', self), ('manufacturer_pref', '=', self)]"/>
                     <field name="manufacturer_ids"
                         string="Homolog Includes"
-                        filter_domain="[('manufacturer_ids', 'ilike', self)]"/>
+                        filter_domain="['|', ('manufacturer_ids', 'ilike', self), ('manufacturer_pref', 'ilike', self)]"/>
                     <field name="manufacturer_ids"
                         string="Manufacturer of the Homolog"
-                        filter_domain="[('manufacturer_ids.manufacturer_id', 'ilike', self)]"/>
+                        filter_domain="['|', ('manufacturer_ids.manufacturer_id', 'ilike', self), ('manufacturer', 'ilike', self)]"/>
                 </field>
             </field>
         </record>
