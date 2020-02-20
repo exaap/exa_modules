@@ -8,19 +8,29 @@ from openerp import models, api
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
-    @api.model
-    def name_search(self, name='', args=None, operator='ilike', limit=100):
-        res = super(ProductProduct, self).name_search(name, args, operator, limit)
+    def name_search(self, cr, user, name='', args=None, operator='ilike', context=None, limit=100):
+        res = super(ProductProduct, self).name_search(
+            cr,
+            user,
+            name,
+            args,
+            operator,
+            context,
+            limit)
         args = args or []
-        recs = []
+        ids = False
         domain = [
             '|',
             ('manufacturer_pref', operator, name),
             ('manufacturer_ids', operator, name)]
 
-        if name:
-            recs = self.search(domain + args, limit=limit)
-        else:
-            recs = self.search(args, limit=limit)
+        ids = False
 
-        return res + recs.name_get()
+        if name:
+            ids = self.search(cr, user, domain + args, limit=limit, context=context)
+        else:
+            ids = self.search(cr, user, args, limit=limit, context=context)
+
+        result = self.name_get(cr, user, ids, context=context)
+
+        return res + result
