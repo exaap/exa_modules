@@ -12,6 +12,7 @@
     "category": "Product",
     "depends": [
         "product_manufacturer",
+        "product_multiple_barcodes"
     ],
     "summary": "Relate alternative references to the product",
     "data": [
