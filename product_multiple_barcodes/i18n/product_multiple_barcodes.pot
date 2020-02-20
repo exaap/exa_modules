@@ -22,7 +22,7 @@ msgid "Additional Barcodes"
 msgstr ""
 
 #. module: product_multiple_barcodes
-#: code:addons/product_multiple_barcodes/models/product_product.py:24
+#: code:addons/product_multiple_barcodes/models/product_product.py:38
 #, python-format
 msgid "Alert! The following barcodes are duplicated: %s"
 msgstr ""
