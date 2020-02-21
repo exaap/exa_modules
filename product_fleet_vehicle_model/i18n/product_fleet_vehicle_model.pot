@@ -23,5 +23,5 @@ msgstr ""
 #. module: product_fleet_vehicle_model
 #: model:ir.model.fields,field_description:product_fleet_vehicle_model.field_product_product_fleet_vehicle_model_ids
 #: model:ir.model.fields,field_description:product_fleet_vehicle_model.field_product_template_fleet_vehicle_model_ids
-msgid "Vehicle Model"
+msgid "Vehicle Models"
 msgstr ""
