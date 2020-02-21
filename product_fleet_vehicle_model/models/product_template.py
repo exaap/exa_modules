@@ -9,4 +9,7 @@ class ProductTemplate(models.Model):
 
     fleet_vehicle_model_ids = fields.Many2many(
         comodel_name="fleet.vehicle.model",
-        string="Vehicle Model")
+        relation="product_template_fleet_vehicle_model_rel",
+        column1="product_template_id",
+        column2="fleet_vehicle_model_id",
+        string="Vehicle Models")

@@ -22,5 +22,5 @@ msgstr "Plantilla del Producto"
 
 #. module: product_fleet_vehicle_model
 #: model:ir.model.fields,field_description:product_fleet_vehicle_model.field_product_template_fleet_vehicle_model_ids
-msgid "Vehicle Model"
-msgstr "Modelo de Vehículo"
+msgid "Vehicle Models"
+msgstr "Modelos de Vehículo"

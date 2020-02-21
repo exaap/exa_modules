@@ -2,7 +2,7 @@
 # Copyright 2018 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from openerp import models
 
 
 class ProductProduct(models.Model):
@@ -22,7 +22,7 @@ class ProductProduct(models.Model):
         domain = [
             '|',
             ('manufacturer_pref', operator, name),
-            ('manufacturer_ids', operator, name)]
+            ('product_manufacturer_ids', operator, name)]
 
         ids = False
 

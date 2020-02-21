@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[4]" position="after">
                     <page string="Homologs">
-                        <field name="manufacturer_ids"
+                        <field name="product_manufacturer_ids"
                             nolabel="1"
                             widget="one2many_list">
                             <tree editable="bottom">
@@ -53,19 +53,19 @@
                         ('default_code', 'ilike', self),
                         ('name', 'ilike', self),
                         ('manufacturer_pref', 'ilike', self),
-                        ('manufacturer_ids', 'ilike', self)]</attribute>
+                        ('product_manufacturer_ids', 'ilike', self)]</attribute>
                 </field>
 
                 <field name="name" position="after">
-                    <field name="manufacturer_ids"
+                    <field name="product_manufacturer_ids"
                         string="Exact Homolog"
-                        filter_domain="['|', ('manufacturer_ids', '=', self), ('manufacturer_pref', '=', self)]"/>
-                    <field name="manufacturer_ids"
+                        filter_domain="['|', ('product_manufacturer_ids', '=', self), ('manufacturer_pref', '=', self)]"/>
+                    <field name="product_manufacturer_ids"
                         string="Homolog Includes"
-                        filter_domain="['|', ('manufacturer_ids', 'ilike', self), ('manufacturer_pref', 'ilike', self)]"/>
-                    <field name="manufacturer_ids"
+                        filter_domain="['|', ('product_manufacturer_ids', 'ilike', self), ('manufacturer_pref', 'ilike', self)]"/>
+                    <field name="product_manufacturer_ids"
                         string="Manufacturer of the Homolog"
-                        filter_domain="['|', ('manufacturer_ids.manufacturer_id', 'ilike', self), ('manufacturer', 'ilike', self)]"/>
+                        filter_domain="['|', ('product_manufacturer_ids.manufacturer_id', 'ilike', self), ('manufacturer', 'ilike', self)]"/>
                 </field>
             </field>
         </record>
