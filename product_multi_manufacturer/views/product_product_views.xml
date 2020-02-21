@@ -7,7 +7,7 @@
 			<field name="arch" type="xml">
 				<xpath expr="//page[4]" position="after">
 					<page string="Homologs">
-						<field name="manufacturer_ids"
+						<field name="product_manufacturer_ids"
 							nolabel="1"
 							widget="one2many_list">
 							<tree editable="bottom">
