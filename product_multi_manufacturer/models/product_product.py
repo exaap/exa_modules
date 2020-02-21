@@ -22,7 +22,7 @@ class ProductProduct(models.Model):
         domain = [
             '|',
             ('manufacturer_pref', operator, name),
-            ('manufacturer_ids', operator, name)]
+            ('product_manufacturer_ids', operator, name)]
 
         ids = False
 
