@@ -8,7 +8,7 @@ from openerp import fields, models
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    manufacturer_ids = fields.One2many(
+    product_manufacturer_ids = fields.One2many(
         string='Homologs',
-        comodel_name='product.manufacturers',
+        comodel_name='product.manufacturer',
         inverse_name='product_template_id')

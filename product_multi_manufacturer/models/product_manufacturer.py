@@ -6,7 +6,7 @@ from openerp import api, fields, models
 
 
 class ProductManufacturers(models.Model):
-    _name = "product.manufacturers"
+    _name = "product.manufacturer"
     _description = "Homolog Products with his Manufacturer"
 
     product_template_id = fields.Many2one(
