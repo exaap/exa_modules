@@ -16,8 +16,8 @@
     ],
     "summary": "Fleet Vehicle Models in Products",
     "data": [
-        "views/product_product.xml",
-        "views/product_template.xml",
+        "views/product_product_views.xml",
+        "views/product_template_views.xml",
     ],
     "installable": True,
 }
