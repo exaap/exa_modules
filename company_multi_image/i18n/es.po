@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* company_multi_image
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-10 20:10+0000\n"
+"PO-Revision-Date: 2020-03-10 20:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: company_multi_image
+#: model:ir.model,name:company_multi_image.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: company_multi_image
+#: field:res.company.image,company_id:0
+msgid "Company"
+msgstr "Empresa"
+
+#. module: company_multi_image
+#: model:ir.model,name:company_multi_image.model_res_company_image
+#: field:res.company,company_image_ids:0
+msgid "Company Images"
+msgstr "Imágenes de la Empresa"
+
+#. module: company_multi_image
+#: field:res.company.image,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: company_multi_image
+#: field:res.company.image,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: company_multi_image
+#: field:res.company.image,display_name:0
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: company_multi_image
+#: field:res.company.image,image_file:0
+msgid "File"
+msgstr "Archivo"
+
+#. module: company_multi_image
+#: field:res.company.image,image_filename:0
+msgid "Filename"
+msgstr "Nombre del Archivo"
+
+#. module: company_multi_image
+#: field:res.company.image,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: company_multi_image
+#: view:res.company:company_multi_image.view_company_form
+msgid "Images"
+msgstr "Imágenes"
+
+#. module: company_multi_image
+#: field:res.company.image,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: company_multi_image
+#: field:res.company.image,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: company_multi_image
+#: field:res.company.image,write_date:0
+msgid "Last Updated on"
+msgstr "Última Actualización el"
