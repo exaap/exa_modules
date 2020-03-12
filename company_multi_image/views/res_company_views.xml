@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[1]" position="after">
+				<page string="Images">
+					<field name="company_image_ids"
+						nolabel="1"
+						widget="one2many_list">
+						<tree editable="bottom">
+							<field name="image_filename" invisible="1"/>
+                            <field name="image_file"
+                                widget="binary"
+                                filename="image_filename"
+                                required="1"/>
+						</tree>
+					</field>
+				</page>	
+			</xpath>
+        </field>
+    </record>
+</odoo>
