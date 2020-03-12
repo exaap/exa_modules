@@ -1,0 +1,3 @@
+product-attribute
+purchase-workflow
+stock-logistics-warehouse
