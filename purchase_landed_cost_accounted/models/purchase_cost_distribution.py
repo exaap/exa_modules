@@ -43,7 +43,7 @@ class PurchaseCostDistribution(models.Model):
                         line.move_id.button_cancel()
 
                     data_line = {}
-                    value_without_landed_costs = cost_line.standar_price_old * line.quantity
+                    value_without_landed_costs = cost_line.standard_price_old * line.quantity
 
                     if line.credit > 0.00:
                         value_without_landed_costs *= (-1)
