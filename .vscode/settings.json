@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/usr/bin/python",
+    "restructuredtext.confPath": "",
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=88",
+        "--ignore=W191,W503,E128,E501"
+    ]
+}
