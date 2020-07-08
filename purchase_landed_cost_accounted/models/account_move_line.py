@@ -5,7 +5,7 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3
 
 from odoo import fields, models, api
-import openerp.addons.decimal_precision as dp
+import odoo.addons.decimal_precision as dp
 
 
 class AccountMoveLine(models.Model):
