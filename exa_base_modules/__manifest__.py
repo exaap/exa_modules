@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "EXA Product Kit",
+    "name": "Base for EXA Modules",
     "author": "EXA Auto Parts Github@exaap, "
               "Joan Marín Github@JoanMarin",
     "license": "AGPL-3",
@@ -13,14 +13,9 @@
     "installable": True,
     "images": [],
     "depends": [
-        "sale",
-        "stock"
+        "base"
     ],
     "data": [
-        "security/ir.model.access.csv",
-        "views/account_invoice_views.xml",
-        "views/product_template_views.xml",
-        "views/sale_order_views.xml",
-        "views/stock_move_views.xml",
+        "data/ir_module_category_data.xml",
     ],
 }
