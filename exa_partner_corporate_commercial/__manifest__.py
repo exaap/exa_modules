@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+# Copyright 2020 Juan Sebastian Ocampo Ospina <Github@Capriatto>
 # Copyright 2020 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "EXA Product Kit",
+    "name": "Partner Corporate Commercial",
     "author": "EXA Auto Parts Github@exaap, "
+              "Juan Sebastian Ocampo Ospina Github@Capriatto, "
               "Joan Marín Github@JoanMarin",
     "license": "AGPL-3",
     "category": "EXA Modules",
@@ -13,15 +15,10 @@
     "installable": True,
     "images": [],
     "depends": [
-        "exa_base_modules",
-        "sale",
-        "stock"
+        "exa_base_modules"
     ],
     "data": [
-        "security/ir.model.access.csv",
-        "views/account_invoice_views.xml",
-        "views/product_template_views.xml",
-        "views/sale_order_views.xml",
-        "views/stock_move_views.xml",
+        "views/res_partner_views.xml",
+        "views/res_users_views.xml",
     ],
 }
