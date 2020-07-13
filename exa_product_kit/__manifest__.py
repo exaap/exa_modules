@@ -13,6 +13,7 @@
     "installable": True,
     "images": [],
     "depends": [
+        "exa_base_modules",
         "sale",
         "stock"
     ],
