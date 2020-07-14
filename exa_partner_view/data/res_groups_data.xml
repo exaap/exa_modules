@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <record id="group_exa_partner_page_sales_purchases" model="res.groups">
+        <field name="name">View Partner Page Sales and Purchases</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_page_accounting" model="res.groups">
+        <field name="name">View Partner Page Accounting</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_page_financial_risk" model="res.groups">
+        <field name="name">View Partner Page Financial Risk</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_field_customer" model="res.groups">
+        <field name="name">View Partner Field Is a Customer</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_field_prospect" model="res.groups">
+        <field name="name">View Partner Field Is a Prospect</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_field_user_id" model="res.groups">
+        <field name="name">View Partner Field Salesperson</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_field_multi_user_ids" model="res.groups">
+        <field name="name">View Partner Field Other Salespersons</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+
+    <record id="group_exa_partner_field_supplier" model="res.groups">
+        <field name="name">View Partner Field Is a Vendor</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="exa_base_modules.category_exa_modules"/>
+    </record>
+</odoo>

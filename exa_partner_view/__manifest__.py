@@ -3,8 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Partner Non-territorial",
-    "summary": "Partner Non-territorial",
+    "name": "EXA Partner View",
     "version": "10.0.1.0.0",
     "license": "AGPL-3",
     "website": "https://github.com/exaap/exaap_modules",
@@ -12,10 +11,21 @@
               "Joan Marín Github@JoanMarin",
     "category": "EXA Modules",
     "depends": [
-        "exa_base_modules"
+        "account",
+        "base_partner_prospect",
+        "contacts",
+        "exa_base_modules",
+        "exa_partner_corporate_commercial",
+        "mail",
+        "partner_company_type",
+        "partner_financial_risk",
+        "partner_sector",
+        "product",
+        "sale_commission",
     ],
     "data": [
-        "views/res_partner_views.xml",
+        "data/res_groups_data.xml",
+        "views/res_partner_views.xml"
     ],
     "installable": True,
 }
