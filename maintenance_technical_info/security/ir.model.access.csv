@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_maintenance_technical_info_maintenance_technical_info,maintenance_technical_info.maintenance_technical_info,model_maintenance_equipment,maintenance_technical_info.group_manage_maintenance_tech_information,1,1,1,0

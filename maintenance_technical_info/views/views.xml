@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+  <!-- equiment : views -->
+    <record id="hr_equipment_tech_info_view_form" model="ir.ui.view">
+        <field name="name">equipment.form</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
+        <field name="arch" type="xml">
+          <xpath expr="//notebook" position="inside">
+            <page string="Información Extra" groups="maintenance_technical_info.group_manage_maintenance_tech_information">
+              <group>
+                  <group>
+                    <field name="x_brand"/>
+                    <field name="x_deviceName"/>
+                    <field name="x_licenseNum"/>
+                    <field name="x_licenseExpiration"/>
+                    <field name="x_os"/>
+                    <field name="x_osUpdate"/>
+                    <field name="x_model"/>
+                    <field name="x_serviceTagSerial"/>
+                    <field name="x_processor"/>
+                    <field name="x_ram"/>
+                    <field name="x_hdd"/>
+                    <field name="x_ssd"/>
+                    <field name="x_dvd"/>
+                    <field name="x_macNic"/>
+                  </group>
+                  <group>
+                    <field name="x_macWifi"/>
+                    <field name="x_anydeskUser"/>
+                    <field name="x_anydeskPassword"/>
+                    <field name="x_telegram"/>
+                    <field name="x_nextcloud"/>
+                    <field name="x_zoom"/>
+                    
+                    <!-- <field name="x_field_23"/>
+                    <field name="x_field_24"/>
+                    <field name="x_field_25"/>
+                    <field name="x_field_26"/>
+                    <field name="x_field_27"/>
+                    <field name="x_field_28"/>
+                    <field name="x_field_29"/>
+                    <field name="x_field_30"/> -->
+                  </group>
+              </group>
+              <group>
+                <group string="Observaciones">
+                  <field name="x_notes" nolabel="1"/>
+                  <!-- <field name="x_field_31"/>
+                  <field name="x_field_32"/>
+                  <field name="x_field_33"/>
+                  <field name="x_field_34"/>
+                  <field name="x_field_35"/> -->
+                </group>
+              </group>
+            </page>     
+          </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>
