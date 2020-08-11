@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_account_invoice_line_quantity_signed
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-11 21:00+0000\n"
+"PO-Revision-Date: 2020-08-11 21:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_account_invoice_line_quantity_signed
+#: model:ir.model,name:exa_account_invoice_line_quantity_signed.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: exa_account_invoice_line_quantity_signed
+#: model:ir.model.fields,field_description:exa_account_invoice_line_quantity_signed.field_account_invoice_line_quantity_signed
+msgid "Quantity Signed"
+msgstr "Cantidad con signo"
