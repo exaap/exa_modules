@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "EXA Stock View",
+    "name": "Account Delivery",
     "author": "EXA Auto Parts Github@exaap, "
               "Joan Marín Github@JoanMarin",
     "license": "AGPL-3",
@@ -13,11 +13,10 @@
     "installable": True,
     "images": [],
     "depends": [
-        "exa_base_modules",
+        "account",
         "delivery",
-        "base_location_zones"
     ],
     "data": [
-        "views/stock_picking_views.xml",
+        "views/account_invoice_views.xml",
     ],
 }
