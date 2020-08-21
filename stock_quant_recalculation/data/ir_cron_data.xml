@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id="cron_recalculate_quants" model="ir.cron" forcecreate="True">
+        <field name="name">Recalculate Quants</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">5</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(minutes=5)).strftime('%Y-%m-%d %H:%M:00')" />
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model" eval="'stock.config.settings'"/>
+        <field name="function" eval="'action_recalculate_quants'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+</odoo>

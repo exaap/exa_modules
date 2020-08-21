@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_quant_recalculation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-21 22:56+0000\n"
+"PO-Revision-Date: 2020-08-21 22:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/stock_config_settings.py:33
+#, python-format
+msgid "Has pickings in partially available state."
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/product_product.py:33
+#: code:addons/stock_quant_recalculation/models/stock_config_settings.py:34
+#, python-format
+msgid "Has stock moves in assigned state."
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/product_product.py:34
+#: code:addons/stock_quant_recalculation/models/stock_config_settings.py:35
+#, python-format
+msgid "Has stock moves in waiting state."
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.model.fields,field_description:stock_quant_recalculation.field_delivery_carrier_last_date_quants_recalculated
+#: model:ir.model.fields,field_description:stock_quant_recalculation.field_product_product_last_date_quants_recalculated
+#: model:ir.model.fields,field_description:stock_quant_recalculation.field_product_template_last_date_quants_recalculated
+msgid "Last Date of Recalculated Quants"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/stock_quant.py:189
+#, python-format
+msgid "Otherwise make sure the right stock/owner is set."
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.model,name:stock_quant_recalculation.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.model,name:stock_quant_recalculation.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.model,name:stock_quant_recalculation.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.model.fields,field_description:stock_quant_recalculation.field_delivery_carrier_quants_recalculated
+#: model:ir.model.fields,field_description:stock_quant_recalculation.field_product_product_quants_recalculated
+#: model:ir.model.fields,field_description:stock_quant_recalculation.field_product_template_quants_recalculated
+msgid "Quants Recalculated?"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.ui.view,arch_db:stock_quant_recalculation.product_form_view_procurement_button
+msgid "Recalculate Quants"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/stock_quant.py:188
+#, python-format
+msgid "The serial number %s is already in stock."
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/stock_quant.py:103
+#, python-format
+msgid "You cannot move to a location of type view %s."
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: code:addons/stock_quant_recalculation/models/stock_quant.py:75
+#, python-format
+msgid "You should only receive by the piece with the same serial number"
+msgstr ""
+
+#. module: stock_quant_recalculation
+#: model:ir.model,name:stock_quant_recalculation.model_stock_config_settings
+msgid "stock.config.settings"
+msgstr ""

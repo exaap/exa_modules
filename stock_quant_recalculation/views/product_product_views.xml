@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="product_form_view_procurement_button" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+            <button name="%(stock.act_make_procurement)d" position="after">
+                <field name="quants_recalculated" invisible="1"/>
+                <button name="recalculate_quants"
+                    type="object"
+                    string="Recalculate Quants"
+                    attrs="{'invisible': [('quants_recalculated', '=', True)]}"/>
+            </button>
+        </field>
+    </record>
+</odoo>
