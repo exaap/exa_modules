@@ -30,7 +30,7 @@ class Covid19Survey(models.Model):
     partner_type = fields.Char('Tipo de visitante', required=True)
     question_1 = fields.Boolean(default=False, string="¿Presenta alguno de estos síntomas, está a la espera de realizarse una prueba de coronavirus o ha sido diagnosticado con coronavirus?: dificultad para respirar, fiebre, tos seca, dolor de cabeza, dolor de garganta, malestar general, pérdida del gusto, pérdida del olfato, escurrimiento nasal, dolor muscular, dolor articular, dolor toráxico.")
     question_2 = fields.Boolean(default=False, string="¿Alguna de las personas que vive con usted presenta alguno de estos síntomas, está a la espera de realizarse una prueba de coronavirus o ha sido diagnosticado con coronavirus?: dificultad para respirar, fiebre, tos seca, dolor de cabeza, dolor de garganta, malestar general, pérdida del gusto, pérdida del olfato, escurrimiento nasal, dolor muscular, dolor articular, dolor toráxico.")
-    question_3 = fields.Boolean(default=False, string="La persona manifiesta que la información declarada es real y acepto las consecuencias de no reportar adecuadamente la información, además autorizo que la información consignada sea tratada conforme a lo establecido en la ley 1581 de 2012 con relación a la protección de datos personales.")
+    question_3 = fields.Boolean(default=False, string="La persona manifiesta que la información declarada es real y acepta las consecuencias de no reportar adecuadamente la información, además autoriza que la información consignada sea tratada conforme a lo establecido en la ley 1581 de 2012 con relación a la protección de datos personales.")
 
     @api.depends('first_name', 'last_name')
     def _compute_name(self):
