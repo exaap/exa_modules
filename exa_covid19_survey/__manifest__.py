@@ -10,8 +10,8 @@
     'depends': ['l10n_co_partner_vat'],
     'summary': 'Covid19, Surveys',
     'data': [
-        'security/ir.model.access.csv',
         'security/security.xml',
+        'security/ir.model.access.csv',
         'views/survey_views.xml'
             ],
     'installable': True,
