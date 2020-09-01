@@ -25,8 +25,8 @@ class Covid19Survey(models.Model):
     identification_document = fields.Char(string='Identificación', required=True)
     contact_phone = fields.Char(string='Tel. Contacto', required=True)
 
-    temperature = fields.Float('¿Cuál es su temperatura corporal el día de hoy? (ejemplo: 36.5)',required=True)
-    mask = fields.Boolean(string="¿Lleva puesto de manera adecuada el tapabocas? *", default=False)
+    temperature = fields.Float('¿Cuál es su temperatura corporal el día de hoy? Use coma en vez de punto (Ej. 36,5)',required=True)
+    mask = fields.Boolean(string="¿Lleva puesto de manera adecuada el tapabocas?", default=False)
     partner_type = fields.Char('Tipo de visitante', required=True)
     question_1 = fields.Boolean(default=False, string="¿Presenta alguno de estos síntomas, está a la espera de realizarse una prueba de coronavirus o ha sido diagnosticado con coronavirus?: dificultad para respirar, fiebre, tos seca, dolor de cabeza, dolor de garganta, malestar general, pérdida del gusto, pérdida del olfato, escurrimiento nasal, dolor muscular, dolor articular, dolor toráxico.")
     question_2 = fields.Boolean(default=False, string="¿Alguna de las personas que vive con usted presenta alguno de estos síntomas, está a la espera de realizarse una prueba de coronavirus o ha sido diagnosticado con coronavirus?: dificultad para respirar, fiebre, tos seca, dolor de cabeza, dolor de garganta, malestar general, pérdida del gusto, pérdida del olfato, escurrimiento nasal, dolor muscular, dolor articular, dolor toráxico.")
