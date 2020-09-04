@@ -74,8 +74,9 @@
         <field name="model">covid19.partner.survey</field>
         <field name="arch" type="xml">
             <tree string="Respuestas" colors="orange:temperature>=37.4">
+                <field name="complete_name" string="Nombre Visitante"/>
+                <field name="contact_phone" string="Tel. Contacto"/>
                 <field name="partner_id" string="Empresa/Persona"/>
-                <field name="complete_name"/>
                 <field name="write_date" string="Hora Ingreso"/>
                 <field name="temperature" string="Temperatura"/> 
             </tree>
