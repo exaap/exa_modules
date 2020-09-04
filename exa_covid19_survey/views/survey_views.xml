@@ -77,6 +77,7 @@
                 <field name="complete_name" string="Nombre Visitante"/>
                 <field name="contact_phone" string="Tel. Contacto"/>
                 <field name="partner_id" string="Empresa/Persona"/>
+                <field name="create_uid" string="Encuestador"/>
                 <field name="write_date" string="Hora Ingreso"/>
                 <field name="temperature" string="Temperatura"/> 
             </tree>
