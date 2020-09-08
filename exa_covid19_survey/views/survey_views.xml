@@ -23,6 +23,10 @@
                     </group>
                     <sheet >
                     <div>
+                        <label for="partner_person_id"/><br/>
+                        <field name="partner_person_id" options="{'no_create': True, 'no_create_edit':True, 'no_open': True}" style="width:30%%" nolabel="1" domain="[('person_type','=','2')]"/>
+                    </div><br/>
+                    <div>
                         <label for="first_name"/><br/>
                         <field name="first_name" style="width:30%%" nolabel="1"/>
                     </div><br/>
@@ -41,6 +45,10 @@
                     <div>
                         <label for="contact_phone" /><br/>
                         <field name="contact_phone" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="partner_country_id" /><br/>
+                        <field name="partner_country_id" style="width:30%%" nolabel="1"/>
                     </div><br/>
                     <div>
                         <label for="temperature" /><br/>
