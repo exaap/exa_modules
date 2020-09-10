@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import date, datetime, timedelta
 from odoo import api, fields, models, SUPERUSER_ID, _
