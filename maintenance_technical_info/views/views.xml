@@ -24,6 +24,13 @@
                     <field name="x_ssd"/>
                     <field name="x_dvd"/>
                     <field name="x_macNic"/>
+                    <field name="x_deployment_env"/>
+                    <field name="x_cpu_cores"/>
+                    <field name="x_raid_hw"/>
+                    <field name="x_monitoring"/>
+                    <field name="x_function"/>
+                    <field name="x_backup"/>
+                    <field name="x_status"/>
                   </group>
                   <group>
                     <field name="x_macWifi"/>

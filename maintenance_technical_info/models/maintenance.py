@@ -25,7 +25,18 @@ class MaintenanceEquipmentTechInfo(models.Model):
     x_telegram = fields.Boolean('Telegram')
     x_nextcloud = fields.Boolean('NextCloud')
     x_zoom = fields.Boolean('Zoom')
-    x_notes = fields.Text('Campo 31')
+    x_notes = fields.Text('Notas')
+    x_deployment_env = fields.Selection([
+        ('testing', 'Pruebas'),
+        ('production', 'Producción')],'Ambiente')
+    x_cpu_cores = fields.Integer('CPU Cores')
+    x_raid_hw = fields.Integer('Raid HW')
+    x_monitoring = fields.Boolean('Monitoreo')
+    x_function = fields.Char('Función')
+    x_backup = fields.Boolean('Backup')
+    x_status = fields.Selection([
+        ('on', 'Encendido'),
+        ('off', 'Apagado')],'Estado')
     # x_field_21 = fields.Char('Campo 21')
     # x_field_22 = fields.Char('Campo 22')
     # x_field_23 = fields.Char('Campo 23')
