@@ -12,7 +12,7 @@ class ResPartner(models.Model):
         args = args or []
         recs = self.browse()
         if name:
-            recs = self.search([('name', '=', name)] + args, limit=limit)
+            recs = self.search([('name', operator, name)] + args, limit=limit)
         if not recs:
             recs = self.search([('identification_document', operator, name)] + args, limit=limit)
         return recs.name_get()
