@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "sale_team_monthly_goal",
+    'name': "Sale Team Monthly Goal",
 
     'summary': """
         This module add a monthly goal for the sale_team           
