@@ -1,0 +1,30 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="sale_team_monthly_goal">
+      <field name="name">Montly Goal Form</field>
+      <field name="model">crm.team</field>
+      <field name="inherit_id" ref="sale.crm_team_salesteams_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='invoiced']" position="after">
+          <field name="monthly_goal"/>
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="sale_team_monthly_goal_1">
+      <field name="name">Montly Goal Form</field>
+      <field name="model">crm.team</field>
+      <field name="inherit_id" ref="sale.crm_team_salesteams_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='more_info']" position="inside">
+          <group string="Otros Objetivos">
+              <field name="lubrication"/>
+              <field name="filtration"/>
+              <field name="other_one"/>
+              <field name="other_two"/>
+              <field name="other_three"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
