@@ -35,17 +35,19 @@ class ProductProduct(models.Model):
         The write function is overridden to prevent duplicated lines.
         """
         msg = _("Alert! The following barcodes are duplicated: %s")
-        seen = set()
-        string_created = ""
         res = super(ProductProduct, self).write(vals)
 
-        for record in self.product_barcode_ids:
-            if record.name in seen:
-                string_created += "\n\n" + record.name
-            else:
-                seen.add(record.name)
+        for product in self:
+            seen = set()
+            string_created = ""
 
-        if string_created:
-            raise ValidationError(msg % string_created)
+            for record in product.product_barcode_ids:
+                if record.name in seen:
+                    string_created += "\n\n" + record.name
+                else:
+                    seen.add(record.name)
+
+            if string_created:
+                raise ValidationError(msg % string_created)
 
         return res
