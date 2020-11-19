@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acess_product_application_group_user,product.application.user,model_product_application,base.group_user,1,1,1,1
+acess_product_application_group_user,product.application.user,model_product_application,product_application_group_manager,1,1,1,1
