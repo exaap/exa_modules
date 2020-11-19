@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class EmployeeChecklistInherit(models.Model):
@@ -6,4 +6,3 @@ class EmployeeChecklistInherit(models.Model):
 
     department_id = fields.Many2one(comodel_name="hr.department",
                                     string="Departamento")
-        

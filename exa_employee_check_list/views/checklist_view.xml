@@ -27,6 +27,19 @@
         </field>
     </record>
 
+    <record id="inherit_view_hr_employee_inherit_form_view" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="employee_check_list.hr_employee_inherit_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='entry_checklist']" position="attributes">
+                <attribute name="domain">['&amp;',('department_id', '=',department_id), ('document_type', '=', 'entry')]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='exit_checklist']" position="attributes">
+                <attribute name="domain">['&amp;',('department_id', '=',department_id), ('document_type', '=', 'exit')]</attribute>
+            </xpath>
+        </field>
+    </record>
+
 
 
 </odoo>
