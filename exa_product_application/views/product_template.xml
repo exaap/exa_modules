@@ -8,7 +8,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_product_apllications" name="Product Application" parent="sales_team.menu_sales" sequence="15" action="product_applications_action"/>
+    <menuitem id="menu_product_apllications" name="Product Application" parent="sales_team.menu_sales" sequence="15" action="product_applications_action" />
 
 
     <record id="product_application_view_form" model="ir.ui.view">
@@ -31,7 +31,7 @@
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='type']" position="after">
-                <field name="apllication_ids" widget="many2many_tags"/>
+                <field name="apllication_ids" widget="many2many_tags" groups="exa_product_application.product_application_group_manager"/>
             </xpath>
         </field>
     </record>
