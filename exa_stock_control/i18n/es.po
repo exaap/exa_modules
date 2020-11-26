@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_stock_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-26 21:36+0000\n"
+"PO-Revision-Date: 2020-11-26 21:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "Brand"
+msgstr "Marca"
+
+#. module: exa_stock_control
+#: code:addons/exa_stock_control/models/stock_inventory.py:14
+#, python-format
+msgid "Brand of the product"
+msgstr "Marca del Producto"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "Select a brand for this product"
+msgstr "Seleccione una marca para este producto"
+
