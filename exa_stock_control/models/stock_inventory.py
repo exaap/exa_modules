@@ -31,21 +31,27 @@ class InventoryInherit(models.Model):
     @api.multi
     def _get_inventory_lines_values(self):
         if self.product_brand_id:
+            vals = []
+            Product = self.env['product.product']
+            ProductTemplate = self.env['product.template']
+            # Empty recordset of products available in stock_quants
+            quant_products = self.env['product.product']
+            # Empty recordset of products to filter
+            products_to_filter = self.env['product.product']
             locations = self.env['stock.location'].search([
                 ('id', 'child_of', [self.location_id.id])
             ])
             domain = ' stock_quant.location_id in %s AND product_product.active = TRUE'
             args = (tuple(locations.ids), )
+            brand_products = ProductTemplate.search([
+                ('product_brand_id', 'in', self.product_brand_id.ids)
+            ])
+            products_products = Product.search([('product_tmpl_id', 'in',
+                                                 brand_products.ids)])
 
-            vals = []
-            Product = self.env['product.product']
-            # Empty recordset of products available in stock_quants
-            quant_products = self.env['product.product']
-            # Empty recordset of products to filter
-            products_to_filter = self.env['product.product']
             domain += ' AND product_brand_id = ANY (%s)'
             args += (self.product_brand_id.ids, )
-
+            products_to_filter |= products_products
             self.env.cr.execute(
                 """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, product_brand_id, lot_id as prod_lot_id, package_id, owner_id as partner_id
                 FROM stock_quant
@@ -56,7 +62,6 @@ class InventoryInherit(models.Model):
                 WHERE %s
                 GROUP BY product_id, stock_quant.location_id, product_brand_id, lot_id, package_id, partner_id """
                 % domain, args)
-
             for product_data in self.env.cr.dictfetchall():
                 # replace the None the dictionary by False, because falsy values are tested later on
                 for void_field in [
@@ -76,4 +81,5 @@ class InventoryInherit(models.Model):
                     products_to_filter, quant_products)
                 vals.extend(exhausted_vals)
             return vals
-        return super(InventoryInherit, self)._get_inventory_lines_values()
+        else:
+            return super(InventoryInherit, self)._get_inventory_lines_values()
