@@ -51,7 +51,7 @@ class InventoryInherit(models.Model):
                                                  brand_products.ids)])
 
             domain += ' AND product_brand_id = ANY (%s)'
-            domain += ' AND stock_quant.in_date::date <= CAST (%s)' % self.adjustment_date
+            #domain += ' AND stock_quant.in_date::date <= CAST (%s)' % self.adjustment_date
             args += (self.product_brand_id.ids, )
             products_to_filter |= products_products
             self.adjustment_date = fields.Date.today()
