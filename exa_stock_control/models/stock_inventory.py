@@ -7,6 +7,7 @@ class InventoryInherit(models.Model):
     product_brand_id = fields.Many2many(comodel_name='product.brand',
                                         string='Brand',
                                         help='Select a brand for this product')
+    adjustment_date = fields.Date(default=fields.Date.today)
 
     @api.model
     def _selection_filter(self):
@@ -50,8 +51,10 @@ class InventoryInherit(models.Model):
                                                  brand_products.ids)])
 
             domain += ' AND product_brand_id = ANY (%s)'
+            domain += ' AND stock_quant.in_date::date <= CAST (%s)' % self.adjustment_date
             args += (self.product_brand_id.ids, )
             products_to_filter |= products_products
+            self.adjustment_date = fields.Date.today()
             self.env.cr.execute(
                 """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, product_brand_id, lot_id as prod_lot_id, package_id, owner_id as partner_id
                 FROM stock_quant
