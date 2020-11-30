@@ -100,3 +100,10 @@ class InventoryInherit(models.Model):
             return vals
         else:
             return super(InventoryInherit, self)._get_inventory_lines_values()
+
+
+class InventoryLine(models.Model):
+    _inherit = "stock.inventory.line"
+
+    position = fields.Char(string="Position Product",
+                           related='product_id.position_product')

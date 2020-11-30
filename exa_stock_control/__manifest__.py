@@ -6,5 +6,6 @@
     "version": "10.0.1.0.0",
     "website": "https://github.com/exaap/exaap_modules",
     'depends': ['product_brand'],
-    'data': ['views/stock_inventory_views.xml']
+    'data':
+    ['views/stock_inventory_views.xml', 'views/product_product_views.xml']
 }
