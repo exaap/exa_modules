@@ -1,3 +1,4 @@
+import datetime
 from odoo import models, fields, api, _
 
 
@@ -7,7 +8,7 @@ class InventoryInherit(models.Model):
     product_brand_id = fields.Many2many(comodel_name='product.brand',
                                         string='Brand',
                                         help='Select a brand for this product')
-    adjustment_date = fields.Date(default=fields.Date.today)
+    adjustment_date = fields.Datetime(string="Fecha de Ultimo")
 
     @api.model
     def _selection_filter(self):
@@ -47,22 +48,35 @@ class InventoryInherit(models.Model):
             brand_products = ProductTemplate.search([
                 ('product_brand_id', 'in', self.product_brand_id.ids)
             ])
+
             products_products = Product.search([('product_tmpl_id', 'in',
                                                  brand_products.ids)])
+            quant_obj = self.env['stock.quant']
+            quants = quant_obj.search([
+                '&',
+                ('product_id', 'in', products_products.ids),
+                ('in_date', '>', self.adjustment_date),
+            ])
+            products_quants = Product.search([('product_tmpl_id', 'in',
+                                               quants.product_id.ids)])
 
-            domain += ' AND product_brand_id = ANY (%s)'
-            #domain += ' AND stock_quant.in_date::date <= CAST (%s)' % self.adjustment_date
-            args += (self.product_brand_id.ids, )
-            products_to_filter |= products_products
-            self.adjustment_date = fields.Date.today()
+            if products_quants:
+                products_to_filter |= products_quants
+                domain += ' AND product_id = ANY (%s)'
+                args += (products_quants.ids, )
+            else:
+                products_to_filter |= products_products
+                domain += ' AND product_id = ANY (%s)'
+                args += (products_products.ids, )
+
             self.env.cr.execute(
-                """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, product_brand_id, lot_id as prod_lot_id, package_id, owner_id as partner_id
-                FROM stock_quant
-                LEFT JOIN product_product
-                ON product_product.id = stock_quant.product_id
+                """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, product_brand_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
+                FROM stock_quant 
+                LEFT JOIN product_product 
+                ON product_product.id = stock_quant.product_id 
                 LEFT JOIN product_template 
-                ON product_product.product_tmpl_id = product_template.id
-                WHERE %s
+                ON product_product.product_tmpl_id = product_template.id 
+                WHERE %s 
                 GROUP BY product_id, stock_quant.location_id, product_brand_id, lot_id, package_id, partner_id """
                 % domain, args)
             for product_data in self.env.cr.dictfetchall():
