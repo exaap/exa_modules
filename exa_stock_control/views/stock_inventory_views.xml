@@ -5,14 +5,16 @@
         <field name="inherit_id" ref="stock.view_inventory_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="adjustment_date" attrs="{'invisible': [('filter', '!=', 'brand')], 'required': [('filter', '=', 'brand')]}" />
+                <field name="adjustment_date" attrs="{'invisible': [('filter', '!=', 'brand')]}" />
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="product_brand_id" attrs="{'invisible': [('filter', '!=', 'brand')], 'required': [('filter', '=', 'brand')]}" widget="many2many_tags" />
             </xpath>
             <xpath expr="//field[@name='line_ids']//tree" position="inside">
                 <field name="position" />
+                <field name="date" />
             </xpath>
+
         </field>
     </record>
 </odoo>

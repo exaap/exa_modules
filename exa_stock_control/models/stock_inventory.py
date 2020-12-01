@@ -8,7 +8,8 @@ class InventoryInherit(models.Model):
     product_brand_id = fields.Many2many(comodel_name='product.brand',
                                         string='Brand',
                                         help='Select a brand for this product')
-    adjustment_date = fields.Datetime(string="Fecha de Ultimo")
+    adjustment_date = fields.Datetime(string="Fecha de Ultimo ajuste",
+                                      required=False)
 
     @api.model
     def _selection_filter(self):
@@ -51,6 +52,7 @@ class InventoryInherit(models.Model):
 
             products_products = Product.search([('product_tmpl_id', 'in',
                                                  brand_products.ids)])
+            """
             quant_obj = self.env['stock.quant']
             quants = quant_obj.search([
                 '&',
@@ -59,11 +61,22 @@ class InventoryInherit(models.Model):
             ])
             products_quants = Product.search([('product_tmpl_id', 'in',
                                                quants.product_id.ids)])
-
-            if products_quants:
-                products_to_filter |= products_quants
-                domain += ' AND product_id = ANY (%s)'
-                args += (products_quants.ids, )
+            """
+            if self.adjustment_date:
+                inventory_line = self.env["stock.inventory.line"].search([
+                    '&', ('date', '>', self.adjustment_date),
+                    ('product_id', 'in', products_products.ids)
+                ])
+                for r in inventory_line:
+                    products_products_line = products_products.search([
+                        '&', ('id', 'not in', r.product_id.ids),
+                        ('product_tmpl_id', 'in', brand_products.ids)
+                    ])
+                    quant_products |= Product.search([('id', 'in',
+                                                       r.product_id.ids)])
+                    products_to_filter |= products_products_line
+                    domain += ' AND product_id = ANY (%s)'
+                    args += (products_products_line.ids, )
             else:
                 products_to_filter |= products_products
                 domain += ' AND product_id = ANY (%s)'
@@ -90,8 +103,6 @@ class InventoryInherit(models.Model):
                 if product_data['product_id']:
                     product_data['product_uom_id'] = Product.browse(
                         product_data['product_id']).uom_id.id
-                    quant_products |= Product.browse(
-                        product_data['product_id'])
                 vals.append(product_data)
             if self.exhausted:
                 exhausted_vals = self._get_exhausted_inventory_line(
@@ -107,3 +118,4 @@ class InventoryLine(models.Model):
 
     position = fields.Char(string="Position Product",
                            related='product_id.position_product')
+    date = fields.Datetime('Inventory Date', default=fields.Datetime.now)
