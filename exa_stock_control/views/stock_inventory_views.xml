@@ -19,4 +19,18 @@
             </xpath>
         </field>
     </record>
+
+    <record id="stock_inventory_line_search" model="ir.ui.view">
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock.stock_inventory_line_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="brand" />
+                <field name="initial_position" />
+                <field name="final_position" />
+                <field name="position" />
+                <field name="date" />
+            </xpath>
+        </field>
+    </record>
 </odoo>

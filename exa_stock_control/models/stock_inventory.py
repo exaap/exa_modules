@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
@@ -64,21 +65,27 @@ class InventoryInherit(models.Model):
                                                quants.product_id.ids)])
             """
             if self.adjustment_date:
-                inventory_line = self.env["stock.inventory.line"].search([
-                    '&', ('date', '>', self.adjustment_date),
-                    ('product_id', 'in', products_products.ids)
-                ])
-                for r in inventory_line:
-                    products_products_line = products_products.search([
-                        '&', ('id', 'not in', r.product_id.ids),
-                        ('product_tmpl_id', 'in', brand_products.ids)
+                if self.adjustment_date > str(datetime.now()):
+                    raise UserError(
+                        _('The selected date and time are not valid, select a lower date and time'
+                          ))
+                else:
+                    inventory_line = self.env["stock.inventory.line"].search([
+                        '&', ('date', '>', self.adjustment_date),
+                        ('product_id', 'in', products_products.ids)
                     ])
-                    quant_products |= Product.search([('id', 'in',
-                                                       r.product_id.ids)])
 
-                    products_to_filter |= products_products_line
-                    domain += ' AND product_id = ANY (%s)'
-                    args += (products_products_line.ids, )
+                    for r in inventory_line:
+                        products_products_line = products_products.search([
+                            '&', ('id', 'not in', r.product_id.ids),
+                            ('product_tmpl_id', 'in', brand_products.ids)
+                        ])
+                        quant_products |= Product.search([('id', 'in',
+                                                           r.product_id.ids)])
+
+                        products_to_filter |= products_products_line
+                        domain += ' AND product_id = ANY (%s)'
+                        args += (products_products_line.ids, )
             else:
                 products_to_filter |= products_products
                 domain += ' AND product_id = ANY (%s)'
