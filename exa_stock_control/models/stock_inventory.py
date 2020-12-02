@@ -1,4 +1,4 @@
-import datetime
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
 
 
@@ -118,6 +118,10 @@ class InventoryInherit(models.Model):
 class InventoryLine(models.Model):
     _inherit = "stock.inventory.line"
 
+    initial_position = fields.Char(string="Initial Position",
+                                   related="product_id.initial_position")
+    final_position = fields.Char(string="Final Position",
+                                 related="product_id.final_position")
     position = fields.Char(string="Position Product",
                            related='product_id.position_product')
     date = fields.Datetime('Inventory Date', default=fields.Datetime.now)
