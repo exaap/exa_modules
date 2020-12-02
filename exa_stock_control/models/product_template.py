@@ -12,5 +12,6 @@ class ProductTemplate(models.Model):
 
     @api.depends('initial_position', 'final_position')
     def _position_name(self):
-        self.position_product = (self.initial_position
-                                 or '') + ' ' + (self.final_position or '')
+        for record in self:
+            record.position_product = (record.initial_position
+                                 or '') + ' ' + (record.final_position or '')
