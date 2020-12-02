@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class InventoryInherit(models.Model):
@@ -74,6 +75,7 @@ class InventoryInherit(models.Model):
                     ])
                     quant_products |= Product.search([('id', 'in',
                                                        r.product_id.ids)])
+
                     products_to_filter |= products_products_line
                     domain += ' AND product_id = ANY (%s)'
                     args += (products_products_line.ids, )
@@ -92,6 +94,7 @@ class InventoryInherit(models.Model):
                 WHERE %s 
                 GROUP BY product_id, stock_quant.location_id, product_brand_id, lot_id, package_id, partner_id """
                 % domain, args)
+
             for product_data in self.env.cr.dictfetchall():
                 # replace the None the dictionary by False, because falsy values are tested later on
                 for void_field in [
@@ -110,7 +113,12 @@ class InventoryInherit(models.Model):
                 exhausted_vals = self._get_exhausted_inventory_line(
                     products_to_filter, quant_products)
                 vals.extend(exhausted_vals)
-            return vals
+                if vals:
+                    return vals
+                else:
+                    raise UserError(
+                        _('There are no products available on the selected date %s'
+                          ) % self.adjustment_date)
         else:
             return super(InventoryInherit, self)._get_inventory_lines_values()
 
@@ -125,3 +133,4 @@ class InventoryLine(models.Model):
     position = fields.Char(string="Position Product",
                            related='product_id.position_product')
     date = fields.Datetime('Inventory Date', default=fields.Datetime.now)
+    brand = fields.Many2one(string="Product brand", related="product_id.brand")

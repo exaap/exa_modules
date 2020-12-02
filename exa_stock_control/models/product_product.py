@@ -11,3 +11,5 @@ class ProductTemplate(models.Model):
                                  related="product_tmpl_id.final_position")
     position_product = fields.Char(string="Position Product",
                                    related="product_tmpl_id.position_product")
+    brand = fields.Many2one(string="Product brand",
+                            related="product_tmpl_id.product_brand_id")
