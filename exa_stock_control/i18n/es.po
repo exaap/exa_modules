@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-26 21:36+0000\n"
-"PO-Revision-Date: 2020-11-26 21:36+0000\n"
+"POT-Creation-Date: 2020-12-02 14:25+0000\n"
+"PO-Revision-Date: 2020-12-02 14:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: exa_stock_control
-#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_product_brand_id
-msgid "Brand"
-msgstr "Marca"
-
-#. module: exa_stock_control
-#: code:addons/exa_stock_control/models/stock_inventory.py:14
+#: code:addons/exa_stock_control/models/stock_inventory.py:17
 #, python-format
 msgid "Brand of the product"
 msgstr "Marca del Producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_adjustment_date
+msgid "Date of last Adjustment"
+msgstr "Fecha del último ajuste"
 
 #. module: exa_stock_control
 #: model:ir.model,name:exa_stock_control.model_stock_inventory
@@ -32,7 +32,33 @@ msgid "Inventory"
 msgstr "Inventario"
 
 #. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_date
+msgid "Inventory Date"
+msgstr "Fecha del inventario"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Línea inventario"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_product_position_product
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_position
+msgid "Position Product"
+msgstr "Posición del producto"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "Select Product Brand"
+msgstr "Seleccione la marca del producto"
+
+#. module: exa_stock_control
 #: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_product_brand_id
-msgid "Select a brand for this product"
-msgstr "Seleccione una marca para este producto"
+msgid "select Product Brand"
+msgstr "Seleccione la marca del producto"
 

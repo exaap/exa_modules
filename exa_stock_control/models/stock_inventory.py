@@ -6,9 +6,9 @@ class InventoryInherit(models.Model):
     _inherit = "stock.inventory"
 
     product_brand_id = fields.Many2many(comodel_name='product.brand',
-                                        string='Brand',
-                                        help='Select a brand for this product')
-    adjustment_date = fields.Datetime(string="Fecha de Ultimo ajuste",
+                                        string='Select Product Brand',
+                                        help='select Product Brand')
+    adjustment_date = fields.Datetime(string="Date of last Adjustment",
                                       required=False)
 
     @api.model
