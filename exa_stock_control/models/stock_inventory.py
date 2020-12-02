@@ -103,6 +103,8 @@ class InventoryInherit(models.Model):
                 if product_data['product_id']:
                     product_data['product_uom_id'] = Product.browse(
                         product_data['product_id']).uom_id.id
+                    quant_products |= Product.browse(
+                        product_data['product_id'])
                 vals.append(product_data)
             if self.exhausted:
                 exhausted_vals = self._get_exhausted_inventory_line(
