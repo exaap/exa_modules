@@ -11,7 +11,7 @@ class InventoryInherit(models.Model):
                                         string='Select Product Brand',
                                         help='select Product Brand')
     adjustment_date = fields.Datetime(string="Date of last Adjustment",
-                                      required=False)
+                                      required=True)
 
     @api.model
     def _selection_filter(self):
@@ -48,22 +48,11 @@ class InventoryInherit(models.Model):
             ])
             domain = ' stock_quant.location_id in %s AND product_product.active = TRUE'
             args = (tuple(locations.ids), )
-            brand_products = ProductTemplate.search([
-                ('product_brand_id', 'in', self.product_brand_id.ids)
+            products_products = Product.search([
+                ('product_tmpl_id.product_brand_id', 'in',
+                 self.product_brand_id.ids)
             ])
 
-            products_products = Product.search([('product_tmpl_id', 'in',
-                                                 brand_products.ids)])
-            """
-            quant_obj = self.env['stock.quant']
-            quants = quant_obj.search([
-                '&',
-                ('product_id', 'in', products_products.ids),
-                ('in_date', '>', self.adjustment_date),
-            ])
-            products_quants = Product.search([('product_tmpl_id', 'in',
-                                               quants.product_id.ids)])
-            """
             if self.adjustment_date:
                 if self.adjustment_date > str(datetime.now()):
                     raise UserError(
@@ -71,37 +60,38 @@ class InventoryInherit(models.Model):
                           ))
                 else:
                     inventory_line = self.env["stock.inventory.line"].search([
-                        '&', ('date', '>', self.adjustment_date),
+                        '&', '&',
+                        ('inventory_id.date', '>', self.adjustment_date),
+                        ('inventory_id.state', '=', 'done'),
                         ('product_id', 'in', products_products.ids)
                     ])
-
+                    vals2 = []
                     for r in inventory_line:
-                        products_products_line = products_products.search([
-                            '&', ('id', 'not in', r.product_id.ids),
-                            ('product_tmpl_id', 'in', brand_products.ids)
-                        ])
-                        quant_products |= Product.search([('id', 'in',
-                                                           r.product_id.ids)])
+                        vals2.append(r.product_id.id)
 
-                        products_to_filter |= products_products_line
-                        domain += ' AND product_id = ANY (%s)'
-                        args += (products_products_line.ids, )
+                    products_products_line = products_products.search([
+                        ('id', 'not in', vals2)
+                    ])
+                    quant_products |= Product.search([('id', 'in', vals2)])
+                    products_to_filter |= products_products_line
+                    domain += ' AND product_id = ANY (%s)'
+                    args += (products_products_line.ids, )
             else:
                 products_to_filter |= products_products
                 domain += ' AND product_id = ANY (%s)'
                 args += (products_products.ids, )
 
             self.env.cr.execute(
-                """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, product_brand_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
+                """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
                 FROM stock_quant 
                 LEFT JOIN product_product 
                 ON product_product.id = stock_quant.product_id 
                 LEFT JOIN product_template 
                 ON product_product.product_tmpl_id = product_template.id 
                 WHERE %s 
-                GROUP BY product_id, stock_quant.location_id, product_brand_id, lot_id, package_id, partner_id """
+                GROUP BY product_id, stock_quant.location_id, lot_id, package_id, partner_id """
                 % domain, args)
-
+            tmp = self.env.cr.dictfetchall()
             for product_data in self.env.cr.dictfetchall():
                 # replace the None the dictionary by False, because falsy values are tested later on
                 for void_field in [
@@ -126,6 +116,11 @@ class InventoryInherit(models.Model):
                     raise UserError(
                         _('There are no products available on the selected date %s'
                           ) % self.adjustment_date)
+            else:
+                if vals:
+                    return vals
+                else:
+                    raise UserError(_('No Hay Productos Disponibles'))
         else:
             return super(InventoryInherit, self)._get_inventory_lines_values()
 
