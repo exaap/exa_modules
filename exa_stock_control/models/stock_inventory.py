@@ -36,51 +36,38 @@ class InventoryInherit(models.Model):
     @api.multi
     def _get_inventory_lines_values(self):
         if self.product_brand_id:
-            vals = []
-            Product = self.env['product.product']
-            ProductTemplate = self.env['product.template']
-            # Empty recordset of products available in stock_quants
-            quant_products = self.env['product.product']
-            # Empty recordset of products to filter
-            products_to_filter = self.env['product.product']
+            # TDE CLEANME: is sql really necessary ? I don't think so
             locations = self.env['stock.location'].search([
                 ('id', 'child_of', [self.location_id.id])
             ])
             domain = ' stock_quant.location_id in %s AND product_product.active = TRUE'
             args = (tuple(locations.ids), )
-            products_products = Product.search([
-                ('product_tmpl_id.product_brand_id', 'in',
-                 self.product_brand_id.ids)
+
+            vals = []
+            Product = self.env['product.product']
+            # Empty recordset of products available in stock_quants
+            quant_products = self.env['product.product']
+            # Empty recordset of products to filter
+            products_to_filter = self.env['product.product']
+            brand_products = Product.search([('product_brand_id', 'in',
+                                              self.product_brand_id.ids)])
+            domain += ' AND product_id = ANY (%s)'
+            inventory_lines = self.env["stock.inventory.line"].search([
+                '&', '&', ('inventory_id.date', '>', self.adjustment_date),
+                ('inventory_id.state', '=', 'done'),
+                ('product_id', 'in', brand_products.ids)
             ])
+            adjustment_products = []
 
-            if self.adjustment_date:
-                if self.adjustment_date > str(datetime.now()):
-                    raise UserError(
-                        _('The selected date and time are not valid, select a lower date and time'
-                          ))
-                else:
-                    inventory_line = self.env["stock.inventory.line"].search([
-                        '&', '&',
-                        ('inventory_id.date', '>', self.adjustment_date),
-                        ('inventory_id.state', '=', 'done'),
-                        ('product_id', 'in', products_products.ids)
-                    ])
-                    vals2 = []
-                    for r in inventory_line:
-                        vals2.append(r.product_id.id)
+            for inventory_line in inventory_lines:
+                adjustment_products.append(inventory_line.product_id.id)
 
-                    products_products_line = products_products.search([
-                        ('id', 'not in', vals2)
-                    ])
-                    quant_products |= Product.search([('id', 'in', vals2)])
-                    products_to_filter |= products_products_line
-                    domain += ' AND product_id = ANY (%s)'
-                    args += (products_products_line.ids, )
-            else:
-                products_to_filter |= products_products
-                domain += ' AND product_id = ANY (%s)'
-                args += (products_products.ids, )
-
+            brand_products = Product.search([
+                '&', ('id', 'not in', adjustment_products),
+                ('product_brand_id', 'in', self.product_brand_id.ids)
+            ])
+            products_to_filter |= brand_products
+            args += (brand_products.ids, )
             self.env.cr.execute(
                 """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
                 FROM stock_quant 
@@ -91,7 +78,7 @@ class InventoryInherit(models.Model):
                 WHERE %s 
                 GROUP BY product_id, stock_quant.location_id, lot_id, package_id, partner_id """
                 % domain, args)
-            tmp = self.env.cr.dictfetchall()
+
             for product_data in self.env.cr.dictfetchall():
                 # replace the None the dictionary by False, because falsy values are tested later on
                 for void_field in [
@@ -106,21 +93,18 @@ class InventoryInherit(models.Model):
                     quant_products |= Product.browse(
                         product_data['product_id'])
                 vals.append(product_data)
-            if self.exhausted:
+
+            if self.exhausted and products_to_filter:
                 exhausted_vals = self._get_exhausted_inventory_line(
                     products_to_filter, quant_products)
                 vals.extend(exhausted_vals)
-                if vals:
-                    return vals
-                else:
-                    raise UserError(
-                        _('There are no products available on the selected date %s'
-                          ) % self.adjustment_date)
+
+            if vals:
+                return vals
             else:
-                if vals:
-                    return vals
-                else:
-                    raise UserError(_('No Hay Productos Disponibles'))
+                raise UserError(
+                    _('There are no products available on the selected date %s'
+                      ) % self.adjustment_date)
         else:
             return super(InventoryInherit, self)._get_inventory_lines_values()
 
@@ -134,5 +118,5 @@ class InventoryLine(models.Model):
                                  related="product_id.final_position")
     position = fields.Char(string="Position Product",
                            related='product_id.position_product')
-    date = fields.Datetime('Inventory Date', default=fields.Datetime.now)
-    brand = fields.Many2one(string="Product brand", related="product_id.brand")
+    product_brand_id = fields.Many2one(string="Product brand",
+                                       related="product_id.product_brand_id")
