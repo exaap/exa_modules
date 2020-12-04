@@ -7,3 +7,7 @@ class ProductTemplate(models.Model):
 
     apllication_ids = fields.Many2many(comodel_name="product.application",
                                        string="Product Application")
+
+    apllication_type_ids = fields.Many2many(
+        comodel_name="product.application.type",
+        string="Product application type")

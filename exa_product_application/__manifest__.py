@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name":
-    "Exa Product Application",
+    " Exa Product Application",
     "license":
     "AGPL-3",
     "author":

@@ -26,7 +26,7 @@
                 <sheet>
                     <group>
                         <field name="name" />
-                        <field name="product_application_type" />
+                        <field name="product_application_type" string="Categoría de la Aplicación del producto" />
                         <field name="product_ids" />
                     </group>
                 </sheet>
@@ -52,6 +52,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='type']" position="after">
                 <field name="apllication_ids" widget="many2many_tags" groups="exa_product_application.product_application_group_manager"/>
+                <field name="apllication_type_ids" widget="many2many_tags" string="Categoría de la Aplicación del producto" groups="exa_product_application.product_application_group_manager"/>
             </xpath>
         </field>
     </record>
