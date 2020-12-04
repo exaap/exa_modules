@@ -14,4 +14,5 @@ class ProductTemplate(models.Model):
     def _position_name(self):
         for record in self:
             record.position_product = (record.initial_position
-                                 or '') + ' ' + (record.final_position or '')
+                                       or '') + '  --->  ' + (
+                                           record.final_position or '')
