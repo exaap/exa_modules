@@ -4,6 +4,13 @@
         <field name="model">stock.inventory</field>
         <field name="inherit_id" ref="stock.view_inventory_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_inventory_line_tree']" position="replace">
+                <button name="action_inventory_line_tree" class="oe_stat_button" icon="fa-building-o" type="object" help="List view of lines">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_text">Details</span>
+                    </div>
+                </button>
+            </xpath>
             <xpath expr="//field[@name='partner_id']" position="before">
                 <field name="adjustment_date" attrs="{'invisible': [('filter', '!=', 'brand')]}"/>
             </xpath>
@@ -30,20 +37,6 @@
                 <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="final_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="position"/>
-            </xpath>
-        </field>
-    </record>
-
-    <record id="view_inventory_form" model="ir.ui.view">
-        <field name="model">stock.inventory</field>
-        <field name="inherit_id" ref="stock.view_inventory_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_inventory_line_tree']" position="replace">
-                <button name="action_inventory_line_tree" class="oe_stat_button" icon="fa-building-o" type="object" help="List view of lines">
-                    <div class="o_form_field o_stat_info">
-                        <span class="o_stat_text">Details</span>
-                    </div>
-                </button>
             </xpath>
         </field>
     </record>
