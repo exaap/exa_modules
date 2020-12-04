@@ -20,7 +20,7 @@ class InventoryInherit(models.Model):
         return res
 
     @api.multi
-    def action_inventory_line_tree(self):
+    def action_inventory_line_tree2(self):
         action = self.env.ref('stock.action_inventory_line_tree').read()[0]
         action['context'] = {
             'default_location_id': self.location_id.id,

@@ -6,8 +6,8 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='property_stock_inventory']" position="after">
                 <field name="edit_position_fields" invisible="1" />
-                <field name="initial_position" attrs="{'readonly': [('edit_position_fields', '==', False)]}" />
-                <field name="final_position" attrs="{'readonly': [('edit_position_fields', '==', False)]}"/>
+                <field name="initial_position" attrs="{'readonly': [('edit_position_fields', '=', False)]}" />
+                <field name="final_position" attrs="{'readonly': [('edit_position_fields', '=', False)]}"/>
                 <field name="position_product"/>
             </xpath>
         </field>
