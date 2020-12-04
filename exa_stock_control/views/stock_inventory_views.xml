@@ -19,7 +19,7 @@
             </xpath>
             <xpath expr="//field[@name='line_ids']//tree" position="inside">
                 <field name="edit_position_fields" invisible="1" />
-                <field name="product_brand_id"/>
+                <field name="product_brand_id" string="Marca"/>
                 <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="final_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}" />
                 <field name="position"/>
@@ -33,7 +33,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="edit_position_fields" invisible="1" />
-                <field name="product_brand_id"/>
+                <field name="product_brand_id" string="Marca"/>
                 <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="final_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="position"/>

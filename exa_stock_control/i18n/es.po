@@ -76,7 +76,7 @@ msgstr "Plantilla del Producto"
 #: model:ir.model.fields,field_description:exa_stock_control.field_product_product_brand
 #: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_brand
 msgid "Product brand"
-msgstr "Marca"
+msgstr "Marca del Producto"
 
 #. module: exa_stock_control
 #: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_product_brand_id
