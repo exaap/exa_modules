@@ -8,7 +8,15 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="product_application_type_action" model="ir.actions.act_window">
+        <field name="name">Action Product Aplication Type</field>
+        <field name="res_model">product.application.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem id="menu_product_apllications" name="Product Application" parent="sales_team.menu_sales" sequence="15" action="product_applications_action" />
+    <menuitem id="menu_product_application_type" name="Product Application Type" parent="sales_team.menu_sales" sequence="16" action="product_application_type_action"/>
 
 
     <record id="product_application_view_form" model="ir.ui.view">
@@ -18,10 +26,22 @@
                 <sheet>
                     <group>
                         <field name="name" />
+                        <field name="product_application_type" />
                         <field name="product_ids" />
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="view_tree_application_product" model="ir.ui.view">
+        <field name="model">product.application</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="product_application_type" />
+                <field name="product_ids" />
+            </tree>
         </field>
     </record>
 
@@ -36,6 +56,27 @@
         </field>
     </record>
 
+    <record id="product_application_type_view_form" model="ir.ui.view">
+        <field name="model">product.application.type</field>
+        <field name="arch" type="xml">
+            <form string="Product Apllication Type">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="reference_type" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-
+    <record id="product_application_type_view_tree" model="ir.ui.view">
+        <field name="model">product.application.type</field>
+        <field name="arch" type="xml">
+            <tree string="Product Apllication Type">
+                <field name="name" />
+                <field name="reference_type" />
+            </tree>
+        </field>
+    </record>
 </odoo>
