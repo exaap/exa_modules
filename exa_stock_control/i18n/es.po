@@ -106,3 +106,27 @@ msgstr "No hay productos disponibles en la fecha seleccionada %s"
 msgid "select Product Brand"
 msgstr "Seleccione la marca del producto"
 
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_product_product_final_position
+#: model:ir.model.fields,help:exa_stock_control.field_product_template_final_position
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_line_final_position
+msgid "Final position in main winery"
+msgstr "Posicion final en bodega principal"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_product_product_initial_position
+#: model:ir.model.fields,help:exa_stock_control.field_product_template_initial_position
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_line_initial_position
+msgid "Initial position in main winery"
+msgstr "Posicion Inicial en bodega principal"
+
+
+#. module: exa_stock_control
+#: model:res.groups,name:exa_stock_control.exa_stock_control_group_manager_position
+msgid "Manager Position"
+msgstr "Manager de Posiciones"
+
+#. module: exa_stock_control
+#: model:res.groups,name:exa_stock_control.exa_stock_control_user
+msgid "User Position"
+msgstr "User de Posiciones"
