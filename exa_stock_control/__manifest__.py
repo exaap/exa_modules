@@ -12,8 +12,9 @@
     "10.0.1.0.0",
     "website":
     "https://github.com/exaap/exaap_modules",
-    'depends': ['product_brand'],
+    'depends': ['stock', 'product_brand'],
     'data': [
+        'security/groups.xml', 'security/ir.model.access.csv',
         'views/stock_inventory_views.xml', 'views/product_product_views.xml',
         'views/product_template_views.xml'
     ]

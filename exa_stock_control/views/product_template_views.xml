@@ -5,9 +5,9 @@
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='property_stock_inventory']" position="after">
-                <field name="initial_position" />
-                <field name="final_position" />
-                <field name="position_product" />
+                <field name="initial_position" groups="exa_stock_control.exa_stock_control_group_manager_position" />
+                <field name="final_position" groups="exa_stock_control.exa_stock_control_group_manager_position" />
+                <field name="position_product" groups="exa_stock_control.exa_stock_control_group_manager_position"/>
             </xpath>
         </field>
     </record>
