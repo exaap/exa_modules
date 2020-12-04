@@ -11,10 +11,11 @@
                 <field name="product_brand_id" attrs="{'invisible': [('filter', '!=', 'brand')], 'required': [('filter', '=', 'brand')]}" widget="many2many_tags" />
             </xpath>
             <xpath expr="//field[@name='line_ids']//tree" position="inside">
-                <field name="product_brand_id" />
-                <field name="initial_position" groups="exa_stock_control.exa_stock_control_group_manager_position" />
-                <field name="final_position" groups="exa_stock_control.exa_stock_control_group_manager_position"/>
-                <field name="position" groups="exa_stock_control.exa_stock_control_group_manager_position" />
+                <field name="edit_position_fields" invisible="1" />
+                <field name="product_brand_id"/>
+                <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '==', False)]}"/>
+                <field name="final_position" attrs="{'readonly':[('edit_position_fields', '==', False)]}" />
+                <field name="position"/>
             </xpath>
         </field>
     </record>
@@ -24,10 +25,11 @@
         <field name="inherit_id" ref="stock.stock_inventory_line_tree2"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="product_brand_id" />
-                <field name="initial_position" groups="exa_stock_control.exa_stock_control_group_manager_position" />
-                <field name="final_position" groups="exa_stock_control.exa_stock_control_group_manager_position"/>
-                <field name="position" groups="exa_stock_control.exa_stock_control_group_manager_position" />
+                <field name="edit_position_fields" invisible="1" />
+                <field name="product_brand_id"/>
+                <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '==', False)]}"/>
+                <field name="final_position" attrs="{'readonly':[('edit_position_fields', '==', False)]}"/>
+                <field name="position"/>
             </xpath>
         </field>
     </record>

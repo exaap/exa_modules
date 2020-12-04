@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acess_stock_control_group_user,exa.stock.control.user,model_product_template,exa_stock_control_user,1,0,0,0
-acess_exa_stock_control_group_manager,exa.stock.control.manager,model_product_template,exa_stock_control_group_manager_position,1,1,1,1
+acess_stock_control_group_user,exa_stock_control_user,model_product_template,,1,0,0,0
+acess_exa_stock_control_group_manager,exa_stock_control_group_manager_position,model_product_template,exa_stock_control_group_manager_position,1,1,1,1

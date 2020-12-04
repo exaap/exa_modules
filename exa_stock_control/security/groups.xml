@@ -5,16 +5,10 @@
         <field name="name">Exa Stock Control</field>
     </record>
 
-    <record id="exa_stock_control_user" model="res.groups">
-        <field name="name">User Position</field>
-        <field name="category_id" ref="module_exa_stock_control"/>
-        <field name="implied_ids" eval="[(4, ref('stock.group_stock_user'))]"/>
-    </record>
 
     <record id="exa_stock_control_group_manager_position" model="res.groups">
         <field name="name">Manager Position</field>
         <field name="category_id" ref="module_exa_stock_control"/>
-        <field name="implied_ids" eval="[(4, ref('exa_stock_control_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 
