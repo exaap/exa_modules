@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 acess_product_application_group_user,product.application.user,model_product_application,,1,0,0,0
 acess_product_application_group_manager,product.application.manager,model_product_application,product_application_group_manager,1,1,1,1
+acess_product_application_type_group_user,product.application.type.user,model_product_application_type,,1,0,0,0
+acess_product_application_type_manager,product.application.type.manager,model_product_application_type,product_application_group_manager,1,1,1,1
