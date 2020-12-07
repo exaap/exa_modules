@@ -60,7 +60,7 @@ msgstr "Línea inventario"
 #: model:ir.model.fields,field_description:exa_stock_control.field_product_template_position_product
 #: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_position
 msgid "Position Product"
-msgstr "Posición del producto"
+msgstr "Posición de bodega principal"
 
 #. module: exa_stock_control
 #: model:ir.model,name:exa_stock_control.model_product_product

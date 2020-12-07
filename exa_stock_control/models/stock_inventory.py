@@ -20,20 +20,6 @@ class InventoryInherit(models.Model):
         return res
 
     @api.multi
-    def action_inventory_line_tree2(self):
-        action = self.env.ref('stock.action_inventory_line_tree').read()[0]
-        action['context'] = {
-            'default_location_id': self.location_id.id,
-            'default_product_id': self.product_id.id,
-            'default_prod_lot_id': self.lot_id.id,
-            'default_package_id': self.package_id.id,
-            'default_partner_id': self.partner_id.id,
-            'default_product_brand_id': self.product_brand_id.ids,
-            'default_inventory_id': self.id,
-        }
-        return action
-
-    @api.multi
     def _get_inventory_lines_values(self):
         if self.product_brand_id:
             # TDE CLEANME: is sql really necessary ? I don't think so
