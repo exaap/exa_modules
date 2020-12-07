@@ -10,4 +10,5 @@ class ProductTemplate(models.Model):
 
     apllication_type_ids = fields.Many2many(
         comodel_name="product.application.type",
+        related="apllication_ids.product_application_type",
         string="Product application type")

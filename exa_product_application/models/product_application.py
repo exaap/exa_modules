@@ -6,12 +6,11 @@ class ProductApplications(models.Model):
     _name = "product.application"
 
     name = fields.Char(string="Product Application")
-    product_ids = fields.Many2many(comodel_name="product.template",
-                                   string="Products")
-
     product_application_type = fields.Many2many(
         comodel_name="product.application.type",
         string="Product application type")
+    product_ids = fields.Many2many(comodel_name="product.template",
+                                   string="Products")
 
 
 class ProductApplicationsType(models.Model):
