@@ -174,6 +174,7 @@ class InventoryLine(models.Model):
                            related='product_id.position_product')
     product_brand_id = fields.Many2one(string="Product brand",
                                        related="product_id.product_brand_id")
+    barcode = fields.Char(string="Barcode", related="product_id.barcode")
     edit_position_fields = fields.Boolean(
         string="Edit 'Positions Fields' Field",
         compute='_get_edit_positions_fields',

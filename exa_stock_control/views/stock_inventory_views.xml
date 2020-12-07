@@ -19,6 +19,7 @@
             </xpath>
             <xpath expr="//field[@name='line_ids']//tree" position="inside">
                 <field name="edit_position_fields" invisible="1" />
+                <field name="barcode" string="Codigo De Barras"/>
                 <field name="product_brand_id" string="Marca"/>
                 <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="final_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}" />
