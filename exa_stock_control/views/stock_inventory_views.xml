@@ -12,7 +12,7 @@
                 </button>
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="adjustment_date" />
+                <field name="adjustment_date" attrs="{'invisible': ['|', '|',('filter', '=', 'product'), ('filter', '=', 'partial'),('filter', '=', 'product_owner')], 'required': ['|', '|', '|', ('filter', '=', 'none'),('filter', '=', 'category'), ('filter', '=', 'owner'), ('filter', '=', 'brand')]}" />
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="product_brand_id" attrs="{'invisible': [('filter', '!=', 'brand')], 'required': [('filter', '=', 'brand')]}" widget="many2many_tags" />

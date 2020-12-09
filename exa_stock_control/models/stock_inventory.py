@@ -10,8 +10,7 @@ class InventoryInherit(models.Model):
     product_brand_id = fields.Many2many(comodel_name='product.brand',
                                         string='Select Product Brand',
                                         help='select Product Brand')
-    adjustment_date = fields.Datetime(string="Date of last Adjustment",
-                                      required=True)
+    adjustment_date = fields.Datetime(string="Date of last Adjustment")
 
     @api.model
     def _selection_filter(self):
@@ -54,7 +53,7 @@ class InventoryInherit(models.Model):
             products_to_filter |= brand_products
             args += (brand_products.ids, )
 
-        if self.filter == 'none' and self.filter != 'brand':
+        if self.filter == 'none':
             all_products = Product.search([('active', '=', True)])
             domain += ' AND product_id = ANY (%s)'
             inventory_lines = self.env["stock.inventory.line"].search([
@@ -93,16 +92,13 @@ class InventoryInherit(models.Model):
 
             products_to_filter |= categ_products_all
             args += (categ_products_all.ids, )
-
         if self.product_id:
-            inventory_lines = self.env["stock.inventory.line"].search([
-                '&', '&', ('inventory_id.date', '>', self.adjustment_date),
-                ('inventory_id.state', '=', 'done'),
-                ('product_id', '=', self.product_id.id)
-            ])
             domain += ' AND product_id = %s'
             args += (self.product_id.id, )
             products_to_filter |= self.product_id
+        if self.partner_id:
+            domain += ' AND owner_id = %s'
+            args += (self.partner_id.id, )
 
         self.env.cr.execute(
             """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
