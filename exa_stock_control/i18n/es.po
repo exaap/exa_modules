@@ -1,0 +1,132 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_stock_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-02 21:45+0000\n"
+"PO-Revision-Date: 2020-12-02 21:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_stock_control
+#: code:addons/exa_stock_control/models/stock_inventory.py:19
+#, python-format
+msgid "Brand of the product"
+msgstr "Marca del Producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_adjustment_date
+msgid "Date of last Adjustment"
+msgstr "Fecha del último ajuste"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_product_final_position
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_template_final_position
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_final_position
+msgid "Final Position"
+msgstr "Posicion Final"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_product_initial_position
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_template_initial_position
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_initial_position
+msgid "Initial Position"
+msgstr "Posicion Inicial"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_date
+msgid "Inventory Date"
+msgstr "Fecha del inventario"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Línea inventario"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_product_position_product
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_template_position_product
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_position
+msgid "Position Product"
+msgstr "Posición de bodega principal"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: exa_stock_control
+#: model:ir.model,name:exa_stock_control.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_product_product_brand
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_brand
+msgid "Product brand"
+msgstr "Marca del Producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "Select Product Brand"
+msgstr "Seleccione la marca del producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_product_product_brand
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_line_brand
+msgid "Select a brand for this product"
+msgstr "Seleccione una marca para este producto"
+
+#. module: exa_stock_control
+#: code:addons/exa_stock_control/models/stock_inventory.py:70
+#, python-format
+msgid "The selected date and time are not valid, select a lower date and time"
+msgstr "La fecha y hora seleccionadas no son válidas, seleccione una fecha y hora infeior"
+
+#. module: exa_stock_control
+#: code:addons/exa_stock_control/models/stock_inventory.py:127
+#, python-format
+msgid "There are no products available on the selected date %s"
+msgstr "No hay productos disponibles en la fecha seleccionada %s"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "select Product Brand"
+msgstr "Seleccione la marca del producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_product_product_final_position
+#: model:ir.model.fields,help:exa_stock_control.field_product_template_final_position
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_line_final_position
+msgid "Final position in main winery"
+msgstr "Posicion final en bodega principal"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_product_product_initial_position
+#: model:ir.model.fields,help:exa_stock_control.field_product_template_initial_position
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_line_initial_position
+msgid "Initial position in main winery"
+msgstr "Posicion Inicial en bodega principal"
+
+
+#. module: exa_stock_control
+#: model:res.groups,name:exa_stock_control.exa_stock_control_group_manager_position
+msgid "Manager Position"
+msgstr "Manager de Posiciones"
+
+#. module: exa_stock_control
+#: model:res.groups,name:exa_stock_control.exa_stock_control_user
+msgid "User Position"
+msgstr "User de Posiciones"
