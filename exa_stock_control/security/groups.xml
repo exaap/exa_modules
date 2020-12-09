@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_exa_stock_control" model="ir.module.category">
+        <field name="name">Exa Stock Control</field>
+    </record>
+
+
+    <record id="exa_stock_control_group_manager_position" model="res.groups">
+        <field name="name">Manager Position</field>
+        <field name="category_id" ref="module_exa_stock_control"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</odoo>
