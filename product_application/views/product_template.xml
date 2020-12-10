@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='type']" position="after">
                 <field name="edit_applications_fields" invisible="1"/>
-                <field name="product_apllication_ids" widget="many2many_tags" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
+                <field name="product_apllication_id" widget="many2many_tags" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
                 <field name="application_category_id" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
                 <field name="application_line_id" domain="[('parent_id', '=', application_category_id)]" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
                 <field name="application_subline_id" domain="[('parent_id', '=', application_line_id)]" attrs="{'readonly':[('edit_applications_fields', '=', False)]}" />

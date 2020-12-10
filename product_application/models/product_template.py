@@ -7,22 +7,20 @@ from odoo import models, fields, api
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    product_apllication_ids = fields.Many2many(
-        comodel_name="product.application",
-        string="Product Application",
-        required=True)
+    product_apllication_id = fields.Many2one(
+        comodel_name="product.application", string="Product Application")
     application_category_id = fields.Many2one(
         comodel_name="product.application.category",
         string="Category",
-        related="product_apllication_ids.application_category_id")
+        related="product_apllication_id.application_category_id")
     application_line_id = fields.Many2one(
         comodel_name="product.application.category",
         string="Line",
-        related="product_apllication_ids.application_line_id")
+        related="product_apllication_id.application_line_id")
     application_subline_id = fields.Many2one(
         comodel_name="product.application.category",
         string="Subline",
-        related="product_apllication_ids.application_subline_id")
+        related="product_apllication_id.application_subline_id")
 
     edit_applications_fields = fields.Boolean(
         string="Edit 'Application Fields' Field",
