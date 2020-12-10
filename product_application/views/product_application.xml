@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_applications_action" model="ir.actions.act_window">
+        <field name="name">Action Product Applications</field>
+        <field name="res_model">product.application</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_product_apllications" name="Product Application" parent="sales_team.menu_sales" sequence="15" action="product_applications_action" />
+
+    <record id="product_application_view_form" model="ir.ui.view">
+        <field name="model">product.application</field>
+        <field name="arch" type="xml">
+            <form string="Product Application">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="application_category_id" />
+                        <field name="application_line_id" domain="[('parent_id', '=', application_category_id)]"/>
+                        <field name="application_subline_id" domain="[('parent_id', '=', application_line_id)]" />
+                        <field name="product_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_application_product" model="ir.ui.view">
+        <field name="model">product.application</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="application_category_id" />
+                <field name="application_line_id" domain="[('parent_id', '=', application_category_id)]"/>
+                <field name="application_subline_id" domain="[('parent_id', '=', application_line_id)]" />
+                <field name="product_ids" />
+            </tree>
+        </field>
+    </record>
+</odoo>
