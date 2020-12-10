@@ -130,3 +130,39 @@ msgstr "Manager de Posiciones"
 #: model:res.groups,name:exa_stock_control.exa_stock_control_user
 msgid "User Position"
 msgstr "User de Posiciones"
+
+#. module: exa_stock_control
+#: model:ir.ui.view,arch_db:exa_stock_control.view_inventory_form
+msgid "<span class=\"o_stat_text\">Details</span>"
+msgstr "<span class=\"o_stat_text\">Detalles</span>"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_barcode
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: exa_stock_control
+#: code:addons/exa_stock_control/models/stock_inventory.py:18
+#, python-format
+msgid "Brand of the product"
+msgstr "Marca del Producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_line_product_brand_id
+msgid "Product brand"
+msgstr "Marca"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,field_description:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "Select Product Brand"
+msgstr "Seleccione la marca del producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_line_product_brand_id
+msgid "Select a brand for this product"
+msgstr "Seleccione una marca para este producto"
+
+#. module: exa_stock_control
+#: model:ir.model.fields,help:exa_stock_control.field_stock_inventory_product_brand_id
+msgid "select Product Brand"
+msgstr "Seleccione la marca del producto"

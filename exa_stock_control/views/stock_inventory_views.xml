@@ -12,29 +12,29 @@
                 </button>
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="adjustment_date" />
+                <field name="adjustment_date" attrs="{'invisible': ['|', '|',('filter', '=', 'product'), ('filter', '=', 'partial'),('filter', '=', 'product_owner')], 'required': ['|', '|', '|', ('filter', '=', 'none'),('filter', '=', 'category'), ('filter', '=', 'owner'), ('filter', '=', 'brand')]}" />
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="product_brand_id" attrs="{'invisible': [('filter', '!=', 'brand')], 'required': [('filter', '=', 'brand')]}" widget="many2many_tags" />
             </xpath>
             <xpath expr="//field[@name='line_ids']//tree" position="inside">
                 <field name="edit_position_fields" invisible="1" />
-                <field name="barcode" string="Codigo De Barras"/>
-                <field name="product_brand_id" string="Marca"/>
+                <field name="barcode"/>
+                <field name="product_brand_id" />
                 <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="final_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}" />
                 <field name="position"/>
             </xpath>
         </field>
     </record>
-
     <record id="stock_inventory_line_search" model="ir.ui.view">
         <field name="model">stock.inventory.line</field>
         <field name="inherit_id" ref="stock.stock_inventory_line_tree2"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='partner_id']" position="after">
+            <xpath expr="//field[@name='product_qty']" position="after">
                 <field name="edit_position_fields" invisible="1" />
-                <field name="product_brand_id" string="Marca"/>
+                <field name="barcode"/>
+                <field name="product_brand_id"/>
                 <field name="initial_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="final_position" attrs="{'readonly':[('edit_position_fields', '=', False)]}"/>
                 <field name="position"/>

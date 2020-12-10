@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
+# Copyright 2020 Alejandro Olano <Github@alejo-code>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from datetime import datetime
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError
 
 
-class InventoryInherit(models.Model):
+class StockInventory(models.Model):
     _inherit = "stock.inventory"
 
     product_brand_id = fields.Many2many(comodel_name='product.brand',
                                         string='Select Product Brand',
                                         help='select Product Brand')
-    adjustment_date = fields.Datetime(string="Date of last Adjustment",
-                                      required=True)
+    adjustment_date = fields.Datetime(string="Date of last Adjustment")
 
     @api.model
     def _selection_filter(self):
-        res = super(InventoryInherit, self)._selection_filter()
+        res = super(StockInventory, self)._selection_filter()
         res.append(('brand', _('Brand of the product')))
         return res
 
@@ -54,7 +54,7 @@ class InventoryInherit(models.Model):
             products_to_filter |= brand_products
             args += (brand_products.ids, )
 
-        if self.filter == 'none' and self.filter != 'brand':
+        if self.filter == 'none':
             all_products = Product.search([('active', '=', True)])
             domain += ' AND product_id = ANY (%s)'
             inventory_lines = self.env["stock.inventory.line"].search([
@@ -93,16 +93,13 @@ class InventoryInherit(models.Model):
 
             products_to_filter |= categ_products_all
             args += (categ_products_all.ids, )
-
         if self.product_id:
-            inventory_lines = self.env["stock.inventory.line"].search([
-                '&', '&', ('inventory_id.date', '>', self.adjustment_date),
-                ('inventory_id.state', '=', 'done'),
-                ('product_id', '=', self.product_id.id)
-            ])
             domain += ' AND product_id = %s'
             args += (self.product_id.id, )
             products_to_filter |= self.product_id
+        if self.partner_id:
+            domain += ' AND owner_id = %s'
+            args += (self.partner_id.id, )
 
         self.env.cr.execute(
             """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
@@ -134,34 +131,4 @@ class InventoryInherit(models.Model):
         if vals:
             return vals
         else:
-            return super(InventoryInherit, self)._get_inventory_lines_values()
-
-
-class InventoryLine(models.Model):
-    _inherit = "stock.inventory.line"
-
-    initial_position = fields.Char(string="Initial Position",
-                                   related="product_id.initial_position")
-    final_position = fields.Char(string="Final Position",
-                                 related="product_id.final_position")
-    position = fields.Char(string="Position Product",
-                           related='product_id.position_product')
-    product_brand_id = fields.Many2one(string="Product brand",
-                                       related="product_id.product_brand_id")
-    barcode = fields.Char(string="Barcode", related="product_id.barcode")
-    edit_position_fields = fields.Boolean(
-        string="Edit 'Positions Fields' Field",
-        compute='_get_edit_positions_fields',
-        store=False)
-
-    @api.multi
-    def _get_edit_positions_fields(self):
-        user = self.env['res.users'].search([('id', '=', self.env.user.id)])
-        edit_position_fields = False
-
-        if user.has_group(
-                'exa_stock_control.exa_stock_control_group_manager_position'):
-            edit_position_fields = True
-
-        for products in self:
-            products.edit_position_fields = edit_position_fields
+            return super(StockInventory, self)._get_inventory_lines_values()
