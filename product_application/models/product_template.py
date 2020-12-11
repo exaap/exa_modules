@@ -4,23 +4,19 @@
 from odoo import models, fields, api
 
 
-class ProductTemplate(models.Model):
+class ProductProduct(models.Model):
     _inherit = "product.template"
 
     product_apllication_id = fields.Many2one(
-        comodel_name="product.application", string="Product Application")
+        comodel_name="product.application", string="Application")
     application_category_id = fields.Many2one(
         comodel_name="product.application.category",
         string="Category",
-        related="product_apllication_id.application_category_id")
-    application_line_id = fields.Many2one(
-        comodel_name="product.application.category",
-        string="Line",
-        related="product_apllication_id.application_line_id")
-    application_subline_id = fields.Many2one(
-        comodel_name="product.application.category",
-        string="Subline",
-        related="product_apllication_id.application_subline_id")
+        domain=[('parent_id', '=', False)])
+    application_sub_category_id = fields.Many2one(
+        comodel_name="product.application.category", string="Sub Categories")
+    application_segment_id = fields.Many2one(
+        comodel_name="product.application.category", string="Segment")
 
     edit_applications_fields = fields.Boolean(
         string="Edit 'Application Fields' Field",
@@ -36,5 +32,5 @@ class ProductTemplate(models.Model):
                 'product_application.product_application_group_manager'):
             edit_applications_fields = True
 
-        for products in self:
-            products.edit_applications_fields = edit_applications_fields
+        for product in self:
+            product.edit_applications_fields = edit_applications_fields

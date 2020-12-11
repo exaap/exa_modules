@@ -4,12 +4,15 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_brand_id']" position="replace">
+                <field name="product_brand_id" attrs="{'required':['|',('type', '=', 'product'),('type', '=', 'service')]}"/>
+            </xpath>
             <xpath expr="//field[@name='type']" position="after">
                 <field name="edit_applications_fields" invisible="1"/>
-                <field name="product_apllication_id" widget="many2many_tags" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
-                <field name="application_category_id" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
-                <field name="application_line_id" domain="[('parent_id', '=', application_category_id)]" attrs="{'readonly':[('edit_applications_fields', '=', False)]}"/>
-                <field name="application_subline_id" domain="[('parent_id', '=', application_line_id)]" attrs="{'readonly':[('edit_applications_fields', '=', False)]}" />
+                <field name="product_apllication_id" attrs="{'required':['|',('type', '=', 'product'),('type', '=', 'service')]}"/>
+                <field name="application_category_id" attrs="{'required':['|',('type', '=', 'product'),('type', '=', 'service')]}" domain="[('parent_id', '=', False)]"/>
+                <field name="application_sub_category_id" domain="[('parent_id', '=', application_category_id)]" attrs="{'required':['|',('type', '=', 'product'),('type', '=', 'service')]}"/>
+                <field name="application_segment_id" domain="[('parent_id', '=', application_sub_category_id)]" attrs="{'required':['|',('type', '=', 'product'),('type', '=', 'service')]}"/>
             </xpath>
         </field>
     </record>
