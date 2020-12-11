@@ -6,4 +6,6 @@ from odoo import models, fields
 
 class ProductApplications(models.Model):
     _name = "product.application"
-    name = fields.Char(string="Product Application")
+    name = fields.Char(string="Product Application",
+                       translate=True,
+                       required=True)
