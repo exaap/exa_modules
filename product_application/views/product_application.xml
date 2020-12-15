@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="product_applications_action" model="ir.actions.act_window">
         <field name="name">Action Product Applications</field>
         <field name="res_model">product.application</field>
@@ -10,7 +9,6 @@
 
     <menuitem id="menu_product_apllications" name="Product Application" parent="sales_team.menu_sales" sequence="15" action="product_applications_action" />
 
-
     <record id="product_application_view_form" model="ir.ui.view">
         <field name="model">product.application</field>
         <field name="arch" type="xml">
@@ -18,24 +16,18 @@
                 <sheet>
                     <group>
                         <field name="name" />
-                        <field name="product_ids" />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-
-    <record id="inherit_view_product_template_only_form_view" model="ir.ui.view">
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <record id="view_tree_application_product" model="ir.ui.view">
+        <field name="model">product.application</field>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='type']" position="after">
-                <field name="apllication_ids" widget="many2many_tags" groups="exa_product_application.product_application_group_manager"/>
-            </xpath>
+            <tree>
+                <field name="name" />
+            </tree>
         </field>
     </record>
-
-
-
 </odoo>
