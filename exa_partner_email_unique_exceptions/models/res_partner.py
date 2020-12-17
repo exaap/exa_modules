@@ -11,13 +11,12 @@ class ResPartner(models.Model):
     @api.multi
     @api.constrains('email')
     def _check_email(self):
-
         for partner in self:
-            domain = [
-                ('id', '!=', partner.id),
-                ('email', '=', partner.email),
-                ('email', '!=', False),
-            ]
+            email_exceptions = self.env["res.partner.email.exception"].search(
+                []).mapped("name")
+            domain = [('id', '!=', partner.id), ('email', '=', partner.email),
+                      ('email', '!=', False),
+                      ('email', '!=', email_exceptions)]
             other_partners = self.search(domain)
 
             # active_test is False when called from
@@ -26,4 +25,3 @@ class ResPartner(models.Model):
                 raise ValidationError(
                     _("This email is already set to partner '%s'") %
                     other_partners[0].display_name)
-        return super(ResPartner, self)._check_email()

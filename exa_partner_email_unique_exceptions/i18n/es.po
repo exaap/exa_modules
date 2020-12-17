@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_partner_email_unique_exceptions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-17 22:39+0000\n"
+"PO-Revision-Date: 2020-12-17 22:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.actions.act_window,name:exa_partner_email_unique_exceptions.email_exception_action
+msgid "Email Exception"
+msgstr "Correos Exceptos"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_name
+#: model:ir.ui.menu,name:exa_partner_email_unique_exceptions.email_setting_menu
+msgid "Email Exceptions"
+msgstr "Correos Exceptos"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_id
+msgid "ID"
+msgstr "ID"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model.fields,field_description:exa_partner_email_unique_exceptions.field_res_partner_email_exception_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model,name:exa_partner_email_unique_exceptions.model_res_partner
+msgid "Partner"
+msgstr "Tercero"
+
+#. module: exa_partner_email_unique_exceptions
+#: code:addons/exa_partner_email_unique_exceptions/models/res_partner.py:26
+#, python-format
+msgid "This email is already set to partner '%s'"
+msgstr "This email is already set to partner '%s'"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model,name:exa_partner_email_unique_exceptions.model_res_config_settings_email
+msgid "res.config.settings.email"
+msgstr "res.config.settings.email"
+
+#. module: exa_partner_email_unique_exceptions
+#: model:ir.model,name:exa_partner_email_unique_exceptions.model_res_partner_email_exception
+msgid "res.partner.email.exception"
+msgstr "res.partner.email.exception"
+

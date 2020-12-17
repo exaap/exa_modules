@@ -13,4 +13,5 @@
     "depends": [
         "partner_email_unique",
     ],
+    "data": ["views/res_config.xml"]
 }
