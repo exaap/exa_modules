@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 Coop IT Easy SCRL fs
 #   Robin Keunen <robin@coopiteasy.be>
-# Copyright 2020 Alejandro Olano <Github@alejo-code>
+#  Copyright 2020 Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, api, _, fields
@@ -33,5 +33,5 @@ class ResPartner(models.Model):
             # base.partner.merge.automatic.wizard
             if other_partners and self.env.context.get("active_test", True):
                 raise ValidationError(
-                    _("This email is already set to partner '%s'")
-                    % other_partners[0].display_name)
+                    _("This email is already set to partner '%s'") %
+                    other_partners[0].display_name)

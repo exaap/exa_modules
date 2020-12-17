@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 Coop IT Easy SCRL fs
 #   Robin Keunen <robin@coopiteasy.be>
+#  Copyright 2020 Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests import common
-from openerp.exceptions import ValidationError
+from odoo.tests import common
+from odoo.exceptions import ValidationError
 
 
 class TestResPartnerEmailUnique(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestResPartnerEmailUnique, cls).setUpClass()
-        partner_obj = (
-            cls.env['res.partner']
-               .with_context({'test_partner_email_unique': True})
-        )
+        partner_obj = (cls.env['res.partner'].with_context(
+            {'test_partner_email_unique': True}))
         cls.partner1 = partner_obj.create({
             'name': 'Partner1',
         })

@@ -59,8 +59,7 @@ Authors
 
 Contributors
 ~~~~~~~~~~~~
-
-* Alejandro Olano <GitHub@alejo-code>
+* Alejandro Olano <Github@alejo-code>
 * Robin Keunen <robin@coopiteasy.be>
 
 Maintainers
