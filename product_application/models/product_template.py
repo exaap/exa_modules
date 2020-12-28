@@ -4,7 +4,7 @@
 from odoo import models, fields, api
 
 
-class ProductProduct(models.Model):
+class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     product_apllication_id = fields.Many2one(
