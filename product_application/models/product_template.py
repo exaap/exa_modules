@@ -34,3 +34,8 @@ class ProductTemplate(models.Model):
 
         for product in self:
             product.edit_applications_fields = edit_applications_fields
+
+    @api.onchange('application_category_id')
+    def _onchange_application_category_id(self):
+        self.application_sub_category_id = ""
+        self.application_segment_id = ""
