@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright 2020 Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class ProductTemplate(models.Model):
@@ -37,5 +38,16 @@ class ProductTemplate(models.Model):
 
     @api.onchange('application_category_id')
     def _onchange_application_category_id(self):
-        self.application_sub_category_id = ""
-        self.application_segment_id = ""
+        self.application_sub_category_id = False
+        self.application_segment_id = False
+
+    @api.onchange('application_sub_category_id')
+    def _onchange_application_sub_category_id(self):
+        self.application_segment_id = False
+
+    @api.multi
+    def toggle_active(self):
+        user = self.env['res.users'].search([('id', '=', self.env.user.id)])
+        if not user.has_group('product_application.group_archive'):
+            raise UserError(_('You cannot archive products'))
+        return super(ProductTemplate, self).toggle_active()
