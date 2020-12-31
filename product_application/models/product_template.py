@@ -51,3 +51,17 @@ class ProductTemplate(models.Model):
         if not user.has_group('product_application.group_archive'):
             raise UserError(_('You cannot archive products'))
         return super(ProductTemplate, self).toggle_active()
+
+    @api.multi
+    def write(self, vals):
+        res = super(ProductTemplate, self).write(vals)
+        if vals.get('product_apllication_id') or vals.get(
+                'application_category_id') or vals.get(
+                    'application_sub_category_id') or vals.get(
+                        'application_segment_id') in vals:
+            user = self.env['res.users'].search([('id', '=', self.env.user.id)
+                                                 ])
+            if not user.has_group('product_application.group_category'):
+                raise UserError(
+                    _('You can not modify applications or product categories'))
+        return res

@@ -150,6 +150,31 @@ msgstr "Sub Categorias"
 msgid "Subcategories"
 msgstr "Sub Categorias"
 
+
+#. module: product_application
+#: code:addons/product_application/models/product_template.py:52
+#: code:addons/product_application/models/res_partner.py:15
+#, python-format
+msgid "You cannot archive products"
+msgstr "No puede archivar productos"
+
+
+#. module: product_application
+#: model:res.groups,name:product_application.group_archive
+msgid "Archive Product y Partner"
+msgstr "Archivar Productos y Terceros"
+
+#. module: product_application
+#: code:addons/product_application/models/product_template.py:66
+#, python-format
+msgid "You can not modify applications or product categories"
+msgstr "No se pueden modificar aplicaciones ni categorías de productos"
+
+#. module: product_application
+#: model:res.groups,name:product_application.group_category
+msgid "Modify Application Categories"
+msgstr "Modificar Categorias de Aplicacion"
+
 #. module: product_application
 #: model:ir.model,name:product_application.model_product_application
 msgid "product.application"
@@ -159,4 +184,5 @@ msgstr "product.application"
 #: model:ir.model,name:product_application.model_product_application_category
 msgid "product.application.category"
 msgstr "product.application.category"
+
 
