@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright 2020 Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class ProductTemplate(models.Model):
@@ -34,3 +35,26 @@ class ProductTemplate(models.Model):
 
         for product in self:
             product.edit_applications_fields = edit_applications_fields
+
+    @api.onchange('application_category_id')
+    def _onchange_application_category_id(self):
+        self.application_sub_category_id = False
+        self.application_segment_id = False
+
+    @api.onchange('application_sub_category_id')
+    def _onchange_application_sub_category_id(self):
+        self.application_segment_id = False
+
+    @api.multi
+    def write(self, vals):
+        res = super(ProductTemplate, self).write(vals)
+        if vals.get('product_apllication_id') or vals.get(
+                'application_category_id') or vals.get(
+                    'application_sub_category_id') or vals.get(
+                        'application_segment_id') in vals:
+            user = self.env['res.users'].search([('id', '=', self.env.user.id)
+                                                 ])
+            if not user.has_group('product_application.group_category'):
+                raise UserError(
+                    _('You can not modify applications or product categories'))
+        return res
