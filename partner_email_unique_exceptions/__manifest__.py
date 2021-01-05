@@ -21,7 +21,7 @@
         "partner_email_unique",
     ],
     "data": [
-        "security/ir.model.access.csv", "security/groups.xml",
+        "security/groups.xml", "security/ir.model.access.csv",
         "views/res_config.xml"
     ]
 }
