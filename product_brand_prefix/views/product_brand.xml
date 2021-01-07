@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_brand_form" model="ir.ui.view">
+        <field name="model">product.brand</field>
+        <field name="inherit_id" ref="product_brand.view_product_brand_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="prefix" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
