@@ -46,13 +46,6 @@ class ProductTemplate(models.Model):
         self.application_segment_id = False
 
     @api.multi
-    def toggle_active(self):
-        user = self.env['res.users'].search([('id', '=', self.env.user.id)])
-        if not user.has_group('product_application.group_archive'):
-            raise UserError(_('You cannot archive products'))
-        return super(ProductTemplate, self).toggle_active()
-
-    @api.multi
     def write(self, vals):
         res = super(ProductTemplate, self).write(vals)
         if vals.get('product_apllication_id') or vals.get(

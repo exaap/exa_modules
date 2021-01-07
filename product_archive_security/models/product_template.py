@@ -5,12 +5,12 @@ from odoo import models, api, _
 from odoo.exceptions import UserError
 
 
-class ResPartner(models.Model):
-    _inherit = "res.partner"
+class ProductTemplate(models.Model):
+    _inherit = "product.template"
 
     @api.multi
     def toggle_active(self):
         user = self.env['res.users'].search([('id', '=', self.env.user.id)])
-        if not user.has_group('product_application.group_archive'):
+        if not user.has_group('product_archive_security.group_archive'):
             raise UserError(_('You cannot archive products'))
-        return super(ResPartner, self).toggle_active()
+        return super(ProductTemplate, self).toggle_active()

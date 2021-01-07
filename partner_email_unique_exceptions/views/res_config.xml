@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="email_exception_action" model="ir.actions.act_window">
+        <field name="name">Email Exception</field>
+        <field name="res_model">res.partner.email.exception</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="settings_email_view_form" model="ir.ui.view">
+        <field name="model">res.partner.email.exception</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="settings_email_view_tree" model="ir.ui.view"> 
+        <field name="model">res.partner.email.exception</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <menuitem id="email_setting_menu" action="email_exception_action" name="Email Exceptions" parent="contacts.menu_contacts" sequence="100" groups="base.group_user,base.group_partner_manager"/>
+</odoo>
