@@ -33,10 +33,11 @@ class ProductTemplate(models.Model):
             if brand_prefix is False:
                 raise UserError(_("The brand does not have a prefix assigned"))
             code = product
-            prefix = code.find(brand_prefix, 0, 2)
-            if prefix == 0:
-                vals['default_code'] = self.default_code
+            prefix = code.find('-', 3)
             if prefix == -1:
+                vals['default_code'] = (brand_prefix
+                                        or '') + '-' + self.default_code
+            if prefix == 3:
                 default_code = self.default_code
                 default_code.replace('-', '')
                 default_code_2 = default_code.replace('-', '')
