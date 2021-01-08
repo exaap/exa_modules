@@ -8,5 +8,5 @@
     "version": "10.0.1.0.0",
     "website": "https://github.com/exaap/exaap_modules",
     "depends": ["product", "product_brand"],
-    "data": ["views/product_brand.xml"]
+    "data": ["views/product_brand.xml", "views/product_template.xml"]
 }
