@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # Copyright 2021 Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import models, api, _
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
+
+    brand_prefix = fields.Char(related="product_brand_id.prefix")
 
     @api.model
     def create(self, vals):
@@ -24,9 +26,9 @@ class ProductTemplate(models.Model):
 
     @api.multi
     def write(self, vals):
-        if vals.get('product_brand_id'):
+        if vals.get("product_brand_id") or vals.get("brand_prefix"):
             brand_prefix = self.env["product.brand"].search([
-                ('id', '=', vals.get('product_brand_id'))
+                ("id", "=", vals.get("product_brand_id"))
             ]).prefix
             product = self.env["product.template"].search([('id', '=', self.id)
                                                            ]).default_code
