@@ -5,3 +5,4 @@ from . import product_template
 from . import product_category
 from . import account
 from . import product_brand
+from . import res_partner
