@@ -7,5 +7,5 @@
     "author": "EXA Auto Parts Github@exaap, Alejandro Olano Github@alejo-code",
     "version": "10.0.1.0.0",
     "website": "https://github.com/exaap/exaap_modules",
-    "depends": ["product", "account", "product_brand"]
+    "depends": ["product", "account", "product_brand", "base"]
 }
