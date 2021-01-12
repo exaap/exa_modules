@@ -41,6 +41,12 @@ class ResPartner(models.Model):
         if vals.get("einvoicing_email"):
             einvoicing_email = vals.get("einvoicing_email")
             related_vals["einvoicing_email"] = einvoicing_email.lower()
+        if vals.get("street"):
+            street = vals.get("street")
+            related_vals["street"] = street.upper()
+        if vals.get("street2"):
+            street2 = vals.get("street2")
+            related_vals["street2"] = street2.upper()
         if related_vals:
             res.write(related_vals)
         return res
@@ -68,4 +74,10 @@ class ResPartner(models.Model):
         if vals.get("einvoicing_email"):
             einvoicing_email = vals.get("einvoicing_email")
             vals["einvoicing_email"] = einvoicing_email.lower()
+        if vals.get("street"):
+            street = vals.get("street")
+            vals["street"] = street.upper()
+        if vals.get("street2"):
+            street2 = vals.get("street2")
+            vals["street2"] = street2.upper()
         return super(ResPartner, self).write(vals)
