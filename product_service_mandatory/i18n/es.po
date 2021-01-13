@@ -20,7 +20,7 @@ msgstr ""
 #: code:addons/product_service_mandatory/models/product_template.py:29
 #, python-format
 msgid "Can't create service-type products, contact your system administrator"
-msgstr "No se pueden crear productos de tipo servicio, comuníquese con el administrador del sistema"
+msgstr "No está autorizado para crear productos de tipo servicio, comuníquese con el administrador del sistema"
 
 #. module: product_service_mandatory
 #: model:res.groups,name:product_service_mandatory.group_services
