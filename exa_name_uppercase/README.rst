@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 =================
-Names In Uppercase
+ Exa Name  Uppercase
 =================
 
 Credits
