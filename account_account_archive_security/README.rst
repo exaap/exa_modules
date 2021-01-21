@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 =================
-Account Account Archive
+Account Archive security
 =================
 
 Credits
