@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_service_mandatory
+#	* product_service_security
 #
 msgid ""
 msgstr ""
@@ -15,20 +15,20 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: product_service_mandatory
-#: code:addons/product_service_mandatory/models/product_template.py:18
-#: code:addons/product_service_mandatory/models/product_template.py:29
+#. module: product_service_security
+#: code:addons/product_service_security/models/product_template.py:18
+#: code:addons/product_service_security/models/product_template.py:29
 #, python-format
 msgid "Can't create service-type products, contact your system administrator"
 msgstr "No está autorizado para crear productos de tipo servicio, comuníquese con el administrador del sistema"
 
-#. module: product_service_mandatory
-#: model:res.groups,name:product_service_mandatory.group_services
+#. module: product_service_security
+#: model:res.groups,name:product_service_security.group_services
 msgid "Create Service Products"
 msgstr "Crear productos tipo servicio"
 
-#. module: product_service_mandatory
-#: model:ir.model,name:product_service_mandatory.model_product_template
+#. module: product_service_security
+#: model:ir.model,name:product_service_security.model_product_template
 msgid "Product Template"
 msgstr "Plantilla del Producto"
 
