@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 =================
-Product Archive Category
+Product  Category Archive security
 =================
 
 Credits
