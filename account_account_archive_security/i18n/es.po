@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* account_account_archive
+#	* account_account_archive_security
 #
 msgid ""
 msgstr ""
@@ -15,13 +15,13 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: account_account_archive
-#: model:ir.model,name:account_account_archive.model_account_account
+#. module: account_account_archive_security
+#: model:ir.model,name:account_account_archive_security.model_account_account
 msgid "Account"
 msgstr "Cuenta"
 
-#. module: account_account_archive
-#: code:addons/account_account_archive/models/account_account.py:17
+#. module: account_account_archive_security
+#: code:addons/account_account_archive_security/models/account_account.py:17
 #, python-format
 msgid "You cannot archive Accounts"
 msgstr "No puede archivar cuentas"
