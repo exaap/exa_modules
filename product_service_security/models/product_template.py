@@ -13,7 +13,7 @@ class ProductTemplate(models.Model):
         if vals.get("type") == "service":
             user = self.env['res.users'].search([('id', '=', self.env.user.id)
                                                  ])
-            if not user.has_group('product_service_mandatory.group_services'):
+            if not user.has_group('product_service_security.group_services'):
                 raise UserError(
                     _("Can't create service-type products, contact your system administrator"
                       ))
@@ -24,7 +24,7 @@ class ProductTemplate(models.Model):
         if vals.get("type") == "service":
             user = self.env['res.users'].search([('id', '=', self.env.user.id)
                                                  ])
-            if not user.has_group('product_service_mandatory.group_services'):
+            if not user.has_group('product_service_security.group_services'):
                 raise UserError(
                     _("Can't create service-type products, contact your system administrator"
                       ))
