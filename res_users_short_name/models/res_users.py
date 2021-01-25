@@ -6,4 +6,5 @@ from odoo import models, fields
 
 class ResUsers(models.Model):
     _inherit = 'res.users'
+
     short_name = fields.Char(string="Short Name", size=17)
