@@ -12,7 +12,7 @@
     "category":
     "EXA Modules",
     "version":
-    "10.0.1.0.0",
+    "11.0.1.0.0",
     "website":
     "https://github.com/exaap/exaap_modules",
     'depends': ['stock', 'product_brand'],
