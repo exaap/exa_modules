@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="exa_product_application_category_action" model="ir.actions.act_window">
+        <field name="name">Action Product Apllication Category</field>
+        <field name="res_model">product.application.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_product_application_category" name="Product Application Categories" parent="sale.menu_product" sequence="4" action="exa_product_application_category_action"/>
+
+    <record id="product_application_category_view_form" model="ir.ui.view">
+        <field name="model">product.application.category</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="parent_id"/>
+                        <field name="child_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="product_application_category_view_tree" model="ir.ui.view">
+        <field name="model">product.application.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="child_ids"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
