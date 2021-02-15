@@ -172,7 +172,7 @@ class ResPartner(models.Model):
         if not customers:
             return
         groups = self._risk_account_groups()
-        for key, group in groups.iteritems():
+        for key, group in groups.items():
             group['read_group'] = AccountMoveLine.read_group(
                 group['domain'] + [('partner_id', 'in', customers.ids)],
                 group['fields'],
@@ -270,7 +270,7 @@ class ResPartner(models.Model):
         group_dic = defaultdict(list)
         for group in groups:
             group_dic[group['company_id'][0]].append(group['partner_id'][0])
-        for company_id, partner_ids in group_dic.iteritems():
+        for company_id, partner_ids in group_dic.items():
             partners = self.browse(partner_ids)
             partners.with_context(
                 force_company=company_id, )._compute_risk_account_amount()
