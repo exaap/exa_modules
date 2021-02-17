@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_property_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="attributes">
+                <attribute name="groups">exa_partner_view.group_exa_partner_page_sales_purchases</attribute>
+            </page>
+            <page name="accounting" position="attributes">
+                <attribute name="groups">exa_partner_view.group_exa_partner_page_accounting</attribute>
+            </page>
+        </field>
+    </record>
+
+
+    <record id="res_partner_view_risk" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_financial_risk.res_partner_view_risk"/>
+        <field name="arch" type="xml">
+            <page name="financial_risk" position="attributes">
+                <attribute name="groups">exa_partner_view.group_exa_partner_page_financial_risk</attribute>
+            </page>
+        </field>
+    </record>
+
+    <record id="view_partner_company_type_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_company_type.view_partner_company_type_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_company_type_id" position="attributes">
+                <attribute name="string">Company Type</attribute>
+                <attribute name="attrs">{'required': ['|', ('prospect', '=', True), ('customer', '=', True), ('is_corporate_commercial', '=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="res_partner_view_form_inherit_mail" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sale_multi_salesperson.res_partner_view_form_inherit_mail"/>
+        <field name="arch" type="xml">
+            <field name="opt_out" position="before">
+                <field name="agent" string="Agent"/>
+                <field name="agents" attrs="{'invisible': [('customer', '=', False)]}" widget="many2many_tags"/>
+            </field>
+            <xpath expr="//field[@name='multi_user_ids']" position="replace"/>
+            <xpath expr="//field[@name='user_id']" position="replace"/>
+            <field name="lang" position="after">
+                <field name="customer" groups="exa_partner_view.group_exa_partner_field_customer"/>
+                <field name="prospect" groups="exa_partner_view.group_exa_partner_field_prospect"/>
+                <field name="user_id" groups="exa_partner_view.group_exa_partner_field_user_id"/>
+                <field name="multi_user_ids" widget="many2many_tags" domain="[('id', 'not in', [user_id])]" groups="exa_partner_view.group_exa_partner_field_multi_user_ids"/>
+                <field name="supplier" groups="exa_partner_view.group_exa_partner_field_supplier"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="vat"/>
+                <field name="credit_limit"/>
+                <field name="property_payment_term_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base_partner_prospect.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="attributes">
+                <attribute name="string">Mobile (WhatsApp)</attribute>
+            </field>
+            <field name="prospect" position="replace"/>
+            <xpath expr="//page[@name='sales_purchases']//group[@name='sale']/field[@name='customer']" position="replace"/>
+        </field>
+    </record>
+
+    <record id="view_partner_form_agent" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sale_commission.view_partner_form_agent"/>
+        <field name="arch" type="xml">
+            <field name="agents" position="replace"/>
+            <field name="agent" position="replace"/>
+            <xpath expr="//page[@name='sales_purchases']//group[@name='purchase']/field[@name='supplier']" position="replace"/>
+        </field>
+    </record>
+
+
+    <record id="base.action_partner_form" model="ir.actions.act_window">
+        <field name="context">{'default_customer': 0, 'default_supplier': 0, 'search_default_customer': 1}</field>
+    </record>
+
+    <record id="base.action_partner_customer_form" model="ir.actions.act_window">
+        <field name="context">{'default_customer': 0, 'default_supplier': 0, 'search_default_customer': 1}</field>
+    </record>
+
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+        <field name="context">{'default_customer': 0, 'default_supplier': 0}</field>
+    </record>
+
+</odoo>

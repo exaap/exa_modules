@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_partner_view
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-14 01:28+0000\n"
+"PO-Revision-Date: 2020-07-14 01:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_partner_view
+#: model:ir.ui.view,arch_db:exa_partner_view.view_emails_partner_info_form
+msgid "Agent"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:ir.ui.view,arch_db:exa_partner_view.view_partner_company_type_form
+msgid "Company Type"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:ir.ui.view,arch_db:exa_partner_view.view_partner_form
+msgid "Mobile (WhatsApp)"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_field_customer
+msgid "View Partner Field Is a Customer"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_field_prospect
+msgid "View Partner Field Is a Prospect"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_field_supplier
+msgid "View Partner Field Is a Vendor"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_field_multi_user_ids
+msgid "View Partner Field Other Salespersons"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_field_user_id
+msgid "View Partner Field Salesperson"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_page_accounting
+msgid "View Partner Page Accounting"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_page_financial_risk
+msgid "View Partner Page Financial Risk"
+msgstr ""
+
+#. module: exa_partner_view
+#: model:res.groups,name:exa_partner_view.group_exa_partner_page_sales_purchases
+msgid "View Partner Page Sales and Purchases"
+msgstr ""
