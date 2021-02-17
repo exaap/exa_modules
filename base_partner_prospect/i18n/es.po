@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_partner_prospect
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-17 13:37+0000\n"
+"PO-Revision-Date: 2021-02-17 13:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_partner_prospect
+#: model:ir.model,name:base_partner_prospect.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: base_partner_prospect
+#: model:ir.model.fields,field_description:base_partner_prospect.field_res_partner__prospect
+#: model:ir.model.fields,field_description:base_partner_prospect.field_res_users__prospect
+msgid "Is a Prospect"
+msgstr "Es un Prospecto"
+
+#. module: base_partner_prospect
+#: code:addons/base_partner_prospect/models/res_partner.py:30
+#, python-format
+msgid "Partner '%s' cannot be both a prospect and a customer"
+msgstr "El Tercero '%s' no puede ser un Prospecto y cliente a la vez"
+
+#. module: base_partner_prospect
+#: model:ir.actions.act_window,name:base_partner_prospect.partner_prospect_action
+#: model_terms:ir.ui.view,arch_db:base_partner_prospect.view_res_partner_filter
+msgid "Prospects"
+msgstr "Prospectos"
+
+
