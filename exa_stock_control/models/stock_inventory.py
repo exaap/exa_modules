@@ -102,7 +102,7 @@ class StockInventory(models.Model):
             args += (self.partner_id.id, )
 
         self.env.cr.execute(
-            """SELECT product_id, sum(qty) as product_qty, stock_quant.location_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
+            """SELECT product_id, sum(quantity) as product_qty, stock_quant.location_id, lot_id as prod_lot_id, package_id, owner_id as partner_id 
                 FROM stock_quant 
                 LEFT JOIN product_product 
                 ON product_product.id = stock_quant.product_id 
@@ -131,4 +131,4 @@ class StockInventory(models.Model):
         if vals:
             return vals
         else:
-            return super(StockInventory, self)._get_inventory_lines_values()
+            return super()._get_inventory_lines_values()
