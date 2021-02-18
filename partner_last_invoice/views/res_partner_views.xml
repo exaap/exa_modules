@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale']" position="inside">
+                <field name="last_out_invoice_id"
+                    attrs="{'invisible': [('customer', '=', False)]}"/>
+                <field name="last_out_invoice_amount"
+                    attrs="{'invisible': [('customer', '=', False)]}"/>
+                <field name="last_out_invoice_date"
+                    attrs="{'invisible': [('customer', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//group[@name='purchase']" position="inside">
+                <field name="last_in_invoice_id"
+                    attrs="{'invisible': [('supplier', '=', False)]}"/>
+                <field name="last_in_invoice_amount"
+                    attrs="{'invisible': [('supplier', '=', False)]}"/>
+                <field name="last_in_invoice_date"
+                    attrs="{'invisible': [('supplier', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
