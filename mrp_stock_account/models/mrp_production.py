@@ -36,7 +36,7 @@ class MrpProduction(models.Model):
         for production in self:
             production.editing_state_of_raws = 'done'
             production._adjust_procure_method()
-            production.move_raw_ids.action_confirm()
+            production.move_raw_ids._action_confirm()
             production._generate_price_unit()
 
         return True
@@ -79,7 +79,7 @@ class MrpProduction(models.Model):
 
                 production_cost += move_raw.price_unit * move_raw.product_uom_qty
 
-            for move_finished in production.finished_move_line_ids:
+            for move_finished in production.move_finished_ids:
                 move_finished.price_unit = production_cost / production.product_qty
 
         return True
