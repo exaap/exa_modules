@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_multi_salesperson
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-13 20:59+0000\n"
+"PO-Revision-Date: 2019-08-13 20:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_multi_salesperson
+#: model:ir.model,name:sale_multi_salesperson.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sale_multi_salesperson
+#: model:ir.model,name:sale_multi_salesperson.model_res_partner
+msgid "Partner"
+msgstr "Tercero"
+
+#. module: sale_multi_salesperson
+#: model:ir.model,name:sale_multi_salesperson.model_sale_order
+msgid "Sales Order"
+msgstr "Ordenes"
+
+#. module: sale_multi_salesperson
+#: model:ir.model.fields,field_description:sale_multi_salesperson.field_account_invoice__multi_user_ids
+#: model:ir.model.fields,field_description:sale_multi_salesperson.field_res_partner__multi_user_ids
+#: model:ir.model.fields,field_description:sale_multi_salesperson.field_res_users___multi_user_ids
+#: model:ir.model.fields,field_description:sale_multi_salesperson.field_sale_order__multi_user_ids
+msgid "Other Salespersons"
+msgstr "Otros Comerciales"
