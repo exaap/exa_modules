@@ -9,8 +9,7 @@
     "license": "AGPL-3",
     "website": "https://www.exaap.com",
     "author": "EXA Auto Parts Github@exaap, "
-              "Joan Marín Github@JoanMarin, "
-              "Planet-odoo Github@planet-odoo",
+              "Joan Marín Github@JoanMarin",
     "category": "Sale",
     "depends": [
         "sale",
