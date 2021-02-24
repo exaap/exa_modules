@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_view_form_inherit_mail" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
+            <field name="arch" type="xml">
+                <field name="opt_out" position="before">
+                    <field name="multi_user_ids"
+                        widget="many2many_tags"
+                        domain="[('id', 'not in', [user_id])]"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
