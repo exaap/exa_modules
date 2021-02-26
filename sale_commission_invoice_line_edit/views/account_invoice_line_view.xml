@@ -23,7 +23,7 @@
 
     <menuitem name="Invoices"
         id="menu_account_invoice_line"
-        parent="sale_commission.menu_agent_form"
+        parent="sale_commission.menu_sale_commissions_management"
         action="action_account_invoice_line"/>
 
     <record id="account_invoice_line_search" model="ir.ui.view">
