@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="invoice_form">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page name="service_order" string="Service Order">
+                    <group name="service_order">
+                        <group>
+                            <field name="has_service_order" required="1"/>
+                            <field name="has_more_service_orders" attrs="{'readonly': [('has_service_order', '=', 'no')]}"/>
+                            <field name="service_order_id" domain="[('state', '=', 'open'), ('partner_id', '=', partner_id)]" attrs="{'required': [('has_service_order', '=', 'yes'), ('has_more_service_orders', '!=', True)], 'readonly':[('has_more_service_orders', '=', True)]}" options='{"no_create": True}'/>
+                        </group>
+                        <field name="service_order_move_lines" mode="tree" readonly="1">
+                            <tree string="Journal Items">
+                                <field name="move_id"/>
+                                <field name="service_order_id"/>
+                                <field name="account_id"/>
+                                <field name="name"/>
+                                <field name="debit" sum="Total Debit"/>
+                                <field name="credit" sum="Total Credit"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='price_subtotal']" position="after">
+                <field name="has_service_order" readonly="1" invisible="1"/>
+                <field name="partner_id" invisible="1" />
+                <field name="has_more_service_orders" readonly="1" invisible="1"/>
+                <field name="service_order_id" domain="[('state', '=', 'open'), ('partner_id', '=', partner_id)]" attrs="{'required': [('has_more_service_orders', '=', True)]}" options='{"no_create": True}'/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
