@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']//tree" position="inside">
+                <field name="edit_discount_field" invisible="1" />
+            </xpath>
+            <xpath expr="//field[@name='discount']" position="attributes">
+                <attribute name="attrs">{'readonly':[('edit_discount_field', '=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
