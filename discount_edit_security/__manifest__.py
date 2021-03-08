@@ -14,7 +14,7 @@
     "12.0.1.0.0",
     "website":
     "https://github.com/exaap/exaap_modules",
-    "depends": ['account', 'sale_management'],
+    "depends": ['account', 'sale'],
     "data": [
         'security/groups.xml', 'views/account_invoice_line_view.xml',
         'views/sale_order_line_view.xml'

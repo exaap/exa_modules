@@ -6,10 +6,10 @@
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_line_ids']//tree" position="inside">
-                <field name="edit_discount_field" invisible="1" />
+                <field name="edit_discount_account" invisible="1" />
             </xpath>
             <xpath expr="//field[@name='discount']" position="attributes">
-                <attribute name="attrs">{'readonly':[('edit_discount_field', '=', False)]}</attribute>
+                <attribute name="attrs">{'readonly':[('edit_discount_account', '=', False)]}</attribute>
             </xpath>
         </field>
     </record>
