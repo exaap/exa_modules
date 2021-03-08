@@ -4,6 +4,7 @@
     <record model="res.groups" id="group_discount_edit">
         <field name="name">Modify Discount Lines</field>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="implied_ids" eval="[(4, ref('sale.group_discount_per_so_line'))]"/>
     </record>
 
 </odoo>

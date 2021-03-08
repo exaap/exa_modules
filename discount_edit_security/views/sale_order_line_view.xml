@@ -5,11 +5,17 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='order_line']//form" position="inside">
+            <xpath expr="//field[@name='order_line']/tree" position="inside">
                 <field name="edit_discount_sale" invisible="1" />
             </xpath>
-            <xpath expr="//field[@name='discount']" position="replace">
-                <field name="discount" attrs="{'readonly':[('edit_discount_sale', '=', False)]}" />
+            <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="attributes">
+                <attribute name="attrs">{'readonly':[('edit_discount_sale', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form" position="inside">
+                <field name="edit_discount_sale" invisible="1" />
+            </xpath>
+            <xpath expr="//field[@name='discount']" position="attributes">
+                <attribute name="attrs">{'readonly':[('edit_discount_sale', '=', False)]}</attribute>
             </xpath>
         </field>
     </record>
