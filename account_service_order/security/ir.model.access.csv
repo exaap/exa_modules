@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_service_order_manager,account_service_order_manager,model_account_service_order,account_service_order.group_service_order_manager,1,1,1,0
+access_account_service_order_unlink,account_service_order_unlink,model_account_service_order,account_service_order.group_unlink_service_order,1,1,1,1
