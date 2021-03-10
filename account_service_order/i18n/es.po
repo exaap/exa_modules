@@ -1,0 +1,273 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_service_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-15 12:26+0000\n"
+"PO-Revision-Date: 2019-11-15 12:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_service_order
+#: model:ir.model,name:account_service_order.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_service_order
+#: selection:account.service.order,state:0
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: account_service_order
+#: selection:account.service.order,state:0
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_has_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_line_has_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_move_line_has_service_order
+msgid "Has Service Order?"
+msgstr "¿Tiene una Orden de Servicio?"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_has_more_service_orders
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_line_has_more_service_orders
+msgid "Has more service orders?"
+msgstr "¿Tiene más Órdenes de Servicio?"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_service_order
+#: model:ir.model,name:account_service_order.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_service_order
+#: model:ir.model,name:account_service_order.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Linea de factura"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_invoice_lines
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+msgid "Invoice Lines"
+msgstr "Líneas de Factura"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_account_is_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_move_line_is_service_order_account
+msgid "Is a Service Order Account?"
+msgstr "¿Es una Cuenta de Orden de Servicio?"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_has_number_y
+msgid "It Has Number Y?"
+msgstr "Tiene Número Y?"
+
+#. module: account_service_order
+#: model:ir.model,name:account_service_order.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_service_order_move_lines
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_move_lines
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+#: model:ir.ui.view,arch_db:account_service_order.view_invoice_form
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_move_line_account_journal_type
+msgid "Journal Type"
+msgstr "Tipo de Diario"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_last_created
+msgid "Last Created?"
+msgstr "¿Último Creado?"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_user_ids
+msgid "Managers/Delegates"
+msgstr "Gestores/Delegados"
+
+#. module: account_service_order
+#: selection:account.invoice,has_service_order:0
+#: selection:account.move.line,has_service_order:0
+msgid "No"
+msgstr "No"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_name
+msgid "Number"
+msgstr "Número"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_number_x
+msgid "Number X"
+msgstr "Número X"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_number_y
+msgid "Number Y"
+msgstr "Número Y"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_number_y_set
+msgid "Number Y Set?"
+msgstr "¿Número Y Establecido?"
+
+#. module: account_service_order
+#: selection:account.service.order,state:0
+msgid "Open"
+msgstr "Abierta"
+
+#. module: account_service_order
+#: model:ir.model.fields,help:account_service_order.field_account_move_line_account_journal_type
+msgid "Select 'Sale' for customer invoices journals.\n"
+"Select 'Purchase' for vendor bills journals.\n"
+"Select 'Cash' or 'Bank' for journals that are used in customer or vendor payments.\n"
+"Select 'General' for miscellaneous operations journals."
+msgstr "Seleccione 'Ventas' para diarios de facturas de cliente.\n"
+"Seleccione 'Compras' para diarios de facturas de proveedor.\n"
+"Seleccione 'Caja' o 'Banco' para diarios que se usan para pagos de clientes y proveedores.\n"
+"Seleccione 'General' para diarios que contienen operaciones varias."
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_line_service_order_id
+#: model:ir.model.fields,field_description:account_service_order.field_account_invoice_service_order_id
+#: model:ir.model.fields,field_description:account_service_order.field_account_move_line_service_order_id
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+#: model:ir.ui.view,arch_db:account_service_order.view_invoice_form
+#: model:ir.ui.view,arch_db:account_service_order.view_move_line_form
+msgid "Service Order"
+msgstr "Orden de Servicio"
+
+#. module: account_service_order
+#: model:res.groups,name:account_service_order.group_service_order_manager
+msgid "Service Order Manager"
+msgstr "Responsable de la Orden de Servicio"
+
+#. module: account_service_order
+#: model:ir.actions.act_window,name:account_service_order.action_account_service_order
+#: model:ir.ui.menu,name:account_service_order.account_service_order_menu
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_tree
+msgid "Service Orders"
+msgstr "Órdenes de Servicio"
+
+#. module: account_service_order
+#: model:ir.model.fields,field_description:account_service_order.field_account_service_order_state
+msgid "State"
+msgstr "Estado"
+
+#. module: account_service_order
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+msgid "To Cancel"
+msgstr "Cancelar"
+
+#. module: account_service_order
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+msgid "To Finalize"
+msgstr "Finalizar"
+
+#. module: account_service_order
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+msgid "To Open"
+msgstr "Abrir"
+
+#. module: account_service_order
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+#: model:ir.ui.view,arch_db:account_service_order.view_invoice_form
+msgid "Total Credit"
+msgstr "Crédito Total"
+
+#. module: account_service_order
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+#: model:ir.ui.view,arch_db:account_service_order.view_invoice_form
+msgid "Total Debit"
+msgstr "Débito Total"
+
+#. module: account_service_order
+#: model:ir.ui.view,arch_db:account_service_order.account_service_order_form
+msgid "Total Subtotal"
+msgstr "Subtotal Total"
+
+#. module: account_service_order
+#: model:res.groups,name:account_service_order.group_unlink_service_order
+msgid "Unlink Service Order"
+msgstr "Borrar Orden de Servicio"
+
+#. module: account_service_order
+#: selection:account.invoice,has_service_order:0
+#: selection:account.move.line,has_service_order:0
+msgid "Yes"
+msgstr "Sí"
+
+#. module: account_service_order
+#: code:addons/account_service_order/models/account_service_order.py:158
+#, python-format
+msgid "You can only delete the last service order at a time, contact your administrator if you have any problems."
+msgstr "Solo puede eliminar la última orden servicio a la vez, póngase en contacto con su administrador si tiene algún problema."
+
+#. module: account_service_order
+#: code:addons/account_service_order/models/account_service_order.py:147
+#, python-format
+msgid "You do not have permission to edit this, contact your administrator if you have any problems."
+msgstr "No tiene permiso para editar esto, póngase en contacto con su administrador si tiene algún problema."
+
+#. module: account_service_order
+#: model:ir.model,name:account_service_order.model_account_service_order
+msgid "account.service.order"
+msgstr "account.service.order"

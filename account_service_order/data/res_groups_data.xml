@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="res.groups" id="group_service_order_manager" >
+            <field name="name">Service Order Manager</field>
+        </record>
+        <record model="res.groups" id="group_unlink_service_order" >
+            <field name="name">Unlink Service Order</field>
+        </record>
+    </data>
+</odoo>
