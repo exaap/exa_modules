@@ -19,6 +19,6 @@ class AccountMoveLine(models.Model):
         related='account_id.is_service_order',
         string='Is a Service Order Account?',
         store=False)
-    #account_journal_type = fields.Selection(related='move_id.journal_id.type',
-    #string='Journal Type',
-    #store=False)
+    account_journal_type = fields.Selection(related='move_id.journal_id.type',
+                                            string='Journal Type',
+                                            store=False)
