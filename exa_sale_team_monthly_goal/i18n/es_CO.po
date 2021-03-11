@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_sale_team_monthly_goal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-11 17:42+0000\n"
+"PO-Revision-Date: 2021-03-11 17:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model.fields,field_description:exa_sale_team_monthly_goal.field_crm_team_filtration
+msgid "Filtration objective"
+msgstr "Objetivo Filtración"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model.fields,field_description:exa_sale_team_monthly_goal.field_crm_team_monthly_goal
+msgid "Monthly target"
+msgstr "Objetivo mensual"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model.fields,field_description:exa_sale_team_monthly_goal.field_crm_team_lubrication
+msgid "Objective Lubrication"
+msgstr "Objetivo Lubricación"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model.fields,field_description:exa_sale_team_monthly_goal.field_crm_team_other_one
+msgid "Objective One"
+msgstr "Objetivo Uno"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model.fields,field_description:exa_sale_team_monthly_goal.field_crm_team_other_three
+msgid "Objective Three"
+msgstr "Objetivo Tres"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model.fields,field_description:exa_sale_team_monthly_goal.field_crm_team_other_two
+msgid "Objective Two"
+msgstr "Objetivo Dos"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.ui.view,arch_db:exa_sale_team_monthly_goal.crm_team_view_form
+msgid "Otros Objetivos"
+msgstr "Otros Objetivos"
+
+#. module: exa_sale_team_monthly_goal
+#: model:ir.model,name:exa_sale_team_monthly_goal.model_crm_team
+msgid "Sales Channel"
+msgstr "Canal de ventas"
+
