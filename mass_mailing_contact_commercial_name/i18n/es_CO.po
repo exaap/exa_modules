@@ -1,0 +1,28 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mass_mailing_contact_commercial_name
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-12 16:15+0000\n"
+"PO-Revision-Date: 2021-03-12 16:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mass_mailing_contact_commercial_name
+#: model:ir.model.fields,field_description:mass_mailing_contact_commercial_name.field_mail_mass_mailing_contact_commercial_name
+#: model:ir.ui.view,arch_db:mass_mailing_contact_commercial_name.view_mail_mass_mailing_contact_search
+msgid "Business"
+msgstr "Empresa"
+
+#. module: mass_mailing_contact_commercial_name
+#: model:ir.model,name:mass_mailing_contact_commercial_name.model_mail_mass_mailing_contact
+msgid "Mass Mailing Contact"
+msgstr "Contacto de envío de correo masivo"
+
