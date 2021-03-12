@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_mail_mass_mailing_contact_tree">
+        <field name="model">mail.mass_mailing.contact</field>
+        <field name="inherit_id" ref="mass_mailing_partner.view_mail_mass_mailing_contact_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="commercial_name"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mail_mass_mailing_contact_search">
+        <field name="model">mail.mass_mailing.contact</field>
+        <field name="inherit_id" ref="mass_mailing_partner.view_mail_mass_mailing_contact_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="commercial_name"/>
+            </field>
+            <filter name="group_partner" position="after">
+                <filter string="Business" name="group_commercial_name" context="{'group_by': 'commercial_name'}"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>
