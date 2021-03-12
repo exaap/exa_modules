@@ -1,0 +1,40 @@
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
+
+=============================================================
+Show discount total and total before discount on sales orders
+=============================================================
+
+Module for Odoo 10 to show discount details on Invoices:
+
+In Inovice Line: Total Before Discount - Discount Value.
+
+In Invoice: Invoice Total before discount - Discount value.
+
+Activate:  Sales > Settings > Order Sales & Sales > Discount
+
+
+Credits
+=======
+
+Contributors
+------------
+
+* Original author version Odoo 8: M.Hagag@DVIT.ME <https://www.dvit.me>
+  
+* Original name module: "invoice_discount"
+
+* Renamed module for version 10: "invoice_discount_exaap"
+
+    
+Modified and adapted by
+-----------------------
+
+* Joan Marín <https://github.com/joanodoo>
+
+* Guillermo Montoya <https://github.com/guillermm>
+
+* Alejandro Olano <https://github.com/alejo-code>
+
+* Adapted for EXA Auto Parts S.A.S
