@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_zone_inherit" model="ir.ui.view">
+        <field name="name">res.partner.zip.zone</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="zip" position="after">
+                <field name="zone_id" placeholder="Zone" options="{'no_open': True, 'no_create': True}" domain="[('zip_id', '=', zip_id)]" />
+                <field name="zone_group_id" invisible="1"/>
+            </field>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='zip']" position="after">
+                <field name="zone_id" placeholder="Zone" options="{'no_open': True, 'no_create': True}" domain="[('zip_id', '=', zip_id)]" />
+                <field name="zone_group_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
