@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <div name="options" position="inside">
+                <div>
+                    <field name="is_kit"/>
+                    <label for="is_kit"/>
+                </div>
+            </div>
+
+            <xpath expr="//page[@name='sales']" position="after">
+                <page string="Product Kit Lines" attrs="{'invisible': [('is_kit', '=', False)]}">
+                    <group>
+                        <field mode="tree" name="product_kit_lines" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_id" options="{'no_create': True}" required="1"/>
+                                <field name="product_qty" required="1"/>
+                                <field name="percent_price" required="1" sum="Total Percent"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
