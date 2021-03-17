@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="city_zip_form">
+        <field name="model">res.city.zip.zone</field>
+        <field name="arch" type="xml">
+            <form string="City">
+                <group col="4">
+                    <field name="name"/>
+                    <field name="zip_id"/>
+                </group>
+                <group>
+                    <field name="district_ids" widget='many2many_list'/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="city_zip_tree">
+        <field name="model">res.city.zip.zone</field>
+        <field name="arch" type="xml">
+            <tree string="Cities">
+                <field name="name"/>
+                <field name="zip_id"/>
+                <field name="district_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_zone_tree" model="ir.actions.act_window">
+        <field name="name">Cites/locations</field>
+        <field name="res_model">res.city.zip.zone</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="city_zip_tree" name="view_id"/>
+    </record>
+
+    <menuitem name="Zones" id="zones_root_menu" parent="base.menu_custom" />
+
+    <menuitem name="Manage Zones" id="zones_menu" parent="zones_root_menu" action="action_zone_tree" />
+
+</odoo>
+

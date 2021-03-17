@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="city_zip_zone_groups_form">
+        <field name="model">res.city.zip.zone.groups</field>
+        <field name="arch" type="xml">
+            <form string="Zone Groups">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <group>
+                    <field name="zone_ids" widget='many2many_list'/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="city_zip_zone_groups_tree">
+        <field name="model">res.city.zip.zone.groups</field>
+        <field name="arch" type="xml">
+            <tree string="Zone Groups">
+                <field name="name"/>
+                <field name="zone_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_zone_groups" model="ir.actions.act_window">
+        <field name="name">Zone Groups</field>
+        <field name="res_model">res.city.zip.zone.groups</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="city_zip_zone_groups_tree" name="view_id"/>
+    </record>
+
+    <menuitem name="Zones" id="zones_root_menu" parent="base.menu_custom" />
+
+    <menuitem name="Zone Groups" id="zones_groups_menu" parent="zones_root_menu" action="action_zone_groups" />
+
+</odoo>
+
