@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_birth_and_foundation_dates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-17 13:57+0000\n"
+"PO-Revision-Date: 2021-03-17 13:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_birth_and_foundation_dates
+#: model_terms:ir.ui.view,arch_db:partner_birth_and_foundation_dates.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_birth_and_foundation_dates.view_partner_simple_form
+msgid "Birth Date"
+msgstr "Fecha de Nacimiento"
+
+#. module: partner_birth_and_foundation_dates
+#: model:ir.model.fields,field_description:partner_birth_and_foundation_dates.field_res_partner__birth_or_foundation_date
+#: model:ir.model.fields,field_description:partner_birth_and_foundation_dates.field_res_users__birth_or_foundation_date
+msgid "Birth Or Foundation Date"
+msgstr "Fecha de Fundación"
+
+#. module: partner_birth_and_foundation_dates
+#: model:ir.model,name:partner_birth_and_foundation_dates.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_birth_and_foundation_dates
+#: model:ir.model.fields,field_description:partner_birth_and_foundation_dates.field_res_partner__related_birth_or_foundation_date
+#: model:ir.model.fields,field_description:partner_birth_and_foundation_dates.field_res_users__related_birth_or_foundation_date
+msgid "Foundation Date"
+msgstr "Fecha de Fundación"
+
