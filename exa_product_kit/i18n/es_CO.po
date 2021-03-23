@@ -1,0 +1,207 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* exa_product_kit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-23 15:45+0000\n"
+"PO-Revision-Date: 2021-03-23 15:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__create_uid
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__create_date
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__discount
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__display_name
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,help:exa_product_kit.field_product_product__sequence
+#: model:ir.model.fields,help:exa_product_kit.field_product_template__sequence
+msgid "Gives the sequence order when displaying a product list"
+msgstr "Proporciona el orden de secuencia al mostrar una lista de productos"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__id
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__id
+msgid "ID"
+msgstr ""
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de Factura"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_product__is_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_template__is_kit
+msgid "Is a Kit"
+msgstr "Es un Kit"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line____last_update
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__write_uid
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__write_date
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__order_id
+msgid "Order"
+msgstr "Orden"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_account_invoice_line__order_kit_line_id
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_line__order_kit_line_id
+#: model:ir.model.fields,field_description:exa_product_kit.field_stock_move__order_kit_line_id
+msgid "Order Kit Line"
+msgstr "Línea de Orden Kit"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order__order_kit_lines
+msgid "Order Kit Lines"
+msgstr "Líneas de Orden Kit"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_account_invoice_line__is_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_line__is_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_stock_move__is_product_kit
+msgid "Part of a Product Kit?"
+msgstr "¿Parte de un Kit de Productos?"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__percent_price
+msgid "Percentage Price (%)"
+msgstr "Porcentaje del Precio (%)"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,help:exa_product_kit.field_product_kit_line__percent_price
+msgid "Percentage from 0 to 100 regarding the price of the Kit."
+msgstr "Porcentaje de 0 a 100 con respecto al precio del Kit."
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__price_unit
+msgid "Price Unit"
+msgstr "Precio Unitario"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__product_id
+msgid "Product Kit"
+msgstr "Kit de Productos"
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_product_kit_line
+#: model_terms:ir.ui.view,arch_db:exa_product_kit.product_template_form_view
+msgid "Product Kit Lines"
+msgstr "Líneas de Kit de Productos"
+
+#. module: exa_product_kit
+#: code:addons/exa_product_kit/models/sale_order.py:67
+#, python-format
+msgid "Product Qty Should be greater than Zero."
+msgstr "La cantidad del producto debe ser mayor que cero."
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_product_template
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__product_tmpl_id
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_product__product_kit_lines
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_template__product_kit_lines
+msgid "Products"
+msgstr "Productos"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__product_qty
+#: model:ir.model.fields,field_description:exa_product_kit.field_sale_order_kit_line__product_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_sale_order
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_sale_order_kit_line
+msgid "Sale Order Kit Lines"
+msgstr "Líneas de Ordenes Kit"
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea Orden de Venta"
+
+#. module: exa_product_kit
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_kit_line__sequence
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_product__sequence
+#: model:ir.model.fields,field_description:exa_product_kit.field_product_template__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de Existencias"
+
+#. module: exa_product_kit
+#: model:ir.model,name:exa_product_kit.model_stock_rule
+msgid "Stock Rule"
+msgstr "Regla de Inventario"
+
+#. module: exa_product_kit
+#: model_terms:ir.ui.view,arch_db:exa_product_kit.product_template_form_view
+msgid "Total Percent"
+msgstr "Total Porcentaje"
+
+#. module: exa_product_kit
+#: model_terms:ir.ui.view,arch_db:exa_product_kit.view_order_form
+msgid "Update Kits"
+msgstr "Actualizar Kits"
+
