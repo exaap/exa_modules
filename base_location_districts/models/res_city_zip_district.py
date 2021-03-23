@@ -8,10 +8,9 @@ class ResCityZipDistrict(models.Model):
     _name = "res.city.zip.district"
 
     name = fields.Char(string='District Name', size=64)
-    zip_id = fields.Many2one(comodel_name='res.better.zip',
+    zip_id = fields.Many2one(comodel_name='res.city.zip',
                              string='City/Location')
-    zone_id = fields.Many2one(comodel_name='res.better.zip.zone',
-                              string='Zone')
+    zone_id = fields.Many2one(comodel_name='res.city.zip.zone', string='Zone')
 
     @api.multi
     def name_get(self):
