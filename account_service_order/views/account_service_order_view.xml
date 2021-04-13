@@ -1,86 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="account_service_order_tree" model="ir.ui.view">
-            <field name="name">account.service.order.tree.view</field>
-            <field name="model">account.service.order</field>
-            <field name="arch" type="xml">
-                <tree string="Service Orders" decoration-info="state=='open'" decoration-muted="state=='cancel'" default_order="id desc">
-                    <field name="name"/>
-                    <field name="partner_id"/>
-                    <field name="state"/>
-                    <field name="last_created"/>
-                </tree>
-            </field>
-        </record>
+    <record id="account_service_order_tree" model="ir.ui.view">
+        <field name="name">account.service.order.tree.view</field>
+        <field name="model">account.service.order</field>
+        <field name="arch" type="xml">
+            <tree string="Service Orders" decoration-info="state=='open'" decoration-muted="state=='cancel'" default_order="id desc">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="last_created"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="account_service_order_form" model="ir.ui.view">
-            <field name="name">account.service.order.form.view</field>
-            <field name="model">account.service.order</field>
-            <field name="arch" type="xml">
-                <form string="Service Order">
-                    <header>
-                        <button name="change_state_to_open" string="To Open" type="object" states="cancel,finished" class="btn-primary"/>
-                        <button name="change_state_to_finished" string="To Finalize" type="object" states="open" class="btn-primary"/>
-                        <button name="change_state_to_cancel" string="To Cancel" type="object" states="open"/>
-                        <field name="state" widget="statusbar" statusbar_visible="open,finished,cancel"/>
-                    </header>
-                    <sheet>
+    <record id="account_service_order_form" model="ir.ui.view">
+        <field name="name">account.service.order.form.view</field>
+        <field name="model">account.service.order</field>
+        <field name="arch" type="xml">
+            <form string="Service Order">
+                <header>
+                    <button name="change_state_to_open" string="To Open" type="object" states="cancel,finished" class="btn-primary"/>
+                    <button name="change_state_to_finished" string="To Finalize" type="object" states="open" class="btn-primary"/>
+                    <button name="change_state_to_cancel" string="To Cancel" type="object" states="open"/>
+                    <field name="state" widget="statusbar" statusbar_visible="open,finished,cancel"/>
+                </header>
+                <sheet>
+                    <group>
                         <group>
-                            <group>
+                            <field name="name"/>
+                            <field name="number_x" invisible="1"/>
+                            <field name="number_y" invisible="1"/>
+                            <field name="number_y_set" invisible="1"/>
+                            <field name="has_number_y" attrs="{'invisible':[('number_y_set', '=', True)]}"/>
+                        </group>
+                        <group>
+                            <field name="partner_id" required="1" attrs="{'readonly':[('state', 'in', ('finished', 'cancel'))]}"/>
+                            <field name="user_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" attrs="{'readonly':[('state', 'in', ('finished', 'cancel'))]}"/>
+                    </group>
+                    <group>
+                        <field name="move_lines" mode="tree" readonly="1">
+                            <tree string="Journal Items">
+                                <field name="move_id"/>
+                                <field name="partner_id"/>
+                                <field name="account_id"/>
                                 <field name="name"/>
-                                <field name="number_x" invisible="1"/>
-                                <field name="number_y" invisible="1"/>
-                                <field name="number_y_set" invisible="1"/>
-                                <field name="has_number_y" attrs="{'invisible':[('number_y_set', '=', True)]}"/>
-                            </group>
-                            <group>
-                                <field name="partner_id" required="1" attrs="{'readonly':[('state', 'in', ('finished', 'cancel'))]}"/>
-                                <field name="user_ids" widget="many2many_tags" options="{'no_create': True}"/>
-                            </group>
-                        </group>
-                        <group>
-                            <field name="description" attrs="{'readonly':[('state', 'in', ('finished', 'cancel'))]}"/>
-                        </group>
-                        <group>
-                            <field name="move_lines" mode="tree" readonly="1">
-                                <tree string="Journal Items">
-                                    <field name="move_id"/>
-                                    <field name="partner_id"/>
-                                    <field name="account_id"/>
-                                    <field name="name"/>
-                                    <field name="debit" sum="Total Debit"/>
-                                    <field name="credit" sum="Total Credit"/>
-                                </tree>
-                            </field>
-                        </group>
-                        <group>
-                            <field name="invoice_lines" mode="tree" readonly="1">
-                                <tree string="Invoice Lines">
-                                    <field name="invoice_id"/>
-                                    <field name="partner_id"/>
-                                    <field name="account_id"/>
-                                    <field name="name"/>
-                                    <field name="quantity"/>
-                                    <field name="price_unit"/>
-                                    <field name="discount"/>
-                                    <field name="price_subtotal" sum="Total Subtotal"/>
-                                </tree>
-                            </field>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                                <field name="debit" sum="Total Debit"/>
+                                <field name="credit" sum="Total Credit"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="invoice_lines" mode="tree" readonly="1">
+                            <tree string="Invoice Lines">
+                                <field name="invoice_id"/>
+                                <field name="partner_id"/>
+                                <field name="account_id"/>
+                                <field name="name"/>
+                                <field name="quantity"/>
+                                <field name="price_unit"/>
+                                <field name="discount"/>
+                                <field name="price_subtotal" sum="Total Subtotal"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="action_account_service_order" model="ir.actions.act_window">
-            <field name="name">Service Orders</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">account.service.order</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
+    <record id="action_account_service_order" model="ir.actions.act_window">
+        <field name="name">Service Orders</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.service.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
-        <menuitem id="account_service_order_menu" name="Service Orders" action="action_account_service_order" parent="account.menu_finance_receivables" sequence="2"/>
-    </data>
+    <menuitem id="account_service_order_menu" name="Service Orders" action="action_account_service_order" parent="account.menu_finance_receivables" sequence="2"/>
 </odoo>
