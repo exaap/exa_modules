@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="sale_order_form" model="ir.ui.view">
+		<field name="name">sale.order.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr='//field[@name="order_line"]/tree/field[@name="price_unit"]' position="after">
+				<field name="total_line" class="oe_inline" groups="sale.group_discount_per_so_line"/>
+			</xpath>
+			<xpath expr='//field[@name="order_line"]/tree/field[@name="discount"]' position="after">
+				<field name="disc_line" class="oe_inline" groups="sale.group_discount_per_so_line"/>
+			</xpath>
+			<xpath expr="//group[@name='sale_total']//field[@name='amount_untaxed']" position="before">
+				<field name="total_b4_disc" widget="monetary" options="{'currency_field': 'currency_id'}" groups="sale.group_discount_per_so_line"/>
+				<field name="disc_total" widget="monetary" options="{'currency_field': 'currency_id'}" groups="sale.group_discount_per_so_line"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>
