@@ -3,7 +3,7 @@
 # Copyright 2021 Alejandro Olano <Github@alejo-code>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class AccountMoveLine(models.Model):
