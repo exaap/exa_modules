@@ -7,15 +7,15 @@
     "name":
     "EXA Partner View",
     "version":
-    "11.0.1.0.0",
+    "12.0.1.0.0",
     "license":
     "AGPL-3",
     "website":
     "https://github.com/exaap/exaap_modules",
     "author":
     "EXA Auto Parts Github@exaap, "
-    "Joan Marín Github@JoanMarin, "
-    "Alejandro Olano Github@alejo-code",
+    "Alejandro Olano Github@alejo-code, "
+    "Joan Marín Github@JoanMarin",
     "category":
     "EXA Modules",
     "depends": [
