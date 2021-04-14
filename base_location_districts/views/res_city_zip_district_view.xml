@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="base_location_district_tree_view" model="ir.ui.view">
         <field name="model">res.city.zip.district</field>
@@ -19,4 +19,3 @@
         </field>
     </record>
 </odoo>
-
