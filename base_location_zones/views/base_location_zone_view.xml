@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record model="ir.ui.view" id="city_zip_form">
         <field name="model">res.city.zip.zone</field>
@@ -37,6 +37,4 @@
     <menuitem name="Zones" id="zones_root_menu" parent="base.menu_custom" />
 
     <menuitem name="Manage Zones" id="zones_menu" parent="zones_root_menu" action="action_zone_tree" />
-
 </odoo>
-
