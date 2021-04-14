@@ -4,7 +4,7 @@
 
 {
     'name':
-    'base_location_zones',
+    'Base Location Zones',
     'version':
     '12.0.1.1.0',
     'depends': ['base_location_districts', 'base_location'],
