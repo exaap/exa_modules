@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_base_location_districts_base_location_districts,base_location_districts.base_location_districts,model_base_location_districts_base_location_districts,,1,0,0,0
