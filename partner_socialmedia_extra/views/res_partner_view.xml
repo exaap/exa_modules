@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field eval="1" name="priority"/>
+        <field name="inherit_id" ref="partner_socialmedia.view_partner_form_socialmedia"/>
+        <field name="arch" type="xml">
+            <field name="mastodon" position="after">
+                <field name="youtube" widget="url"/>
+                <field name="instagram" widget="url"/>
+                <field name="whatsapp" widget="url"/>
+                <field name="telegram" widget="url"/>
+            </field>
+        </field>
+    </record>
+</odoo>
