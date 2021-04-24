@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_location_zones
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-18 17:34+0000\n"
+"PO-Revision-Date: 2020-01-18 17:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_zip_id
+msgid "City/Location"
+msgstr "Ciudad/Ubicación"
+
+#. module: base_location_zones
+#: model:ir.model,name:base_location_zones.model_res_better_zip
+msgid "City/locations completion object"
+msgstr ""
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: base_location_zones
+#: model:ir.model,name:base_location_zones.model_res_partner
+msgid "Partner"
+msgstr "Tercero"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_ids
+#: model:ir.model.fields,field_description:base_location_zones.field_res_partner_zone_id
+#: model:ir.model.fields,field_description:base_location_zones.field_res_users_zone_id
+#: model:ir.ui.view,arch_db:base_location_zones.view_partner_form_zone_inherit
+msgid "Zone"
+msgstr "Zona"
+
+#. module: base_location_zones
+#: model:ir.model.fields,field_description:base_location_zones.field_res_better_zip_zone_name
+msgid "Zone Name"
+msgstr "Zona"
+
+#. module: base_location_zones
+#: model:ir.model,name:base_location_zones.model_res_better_zip_zone
+msgid "res.better.zip.zone"
+msgstr "res.better.zip.zone"
+
