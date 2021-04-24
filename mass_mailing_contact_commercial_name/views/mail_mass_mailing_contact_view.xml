@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Exa Auto Parts S.A.S <sistemas@exaap.com> -->
+<!-- Copyright 2020 Juan Sebastián Ocampo Ospina <juano@exaap.com> -->
+<odoo>
+
+<record model="ir.ui.view" id="view_mail_mass_mailing_cont_commercial_name_tree">
+    <field name="name">mail.mass_mailing.contact.commercialname.tree</field>
+    <field name="model">mail.mass_mailing.contact</field>
+    <field name="inherit_id" ref="mass_mailing_partner.view_mail_mass_mailing_contact_tree"/>
+    <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+            <field name="commercial_name"/>
+        </field>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_mail_mass_mailing_contact_comm_name_search">
+    <field name="name">Add partner's commercial name search field and group by</field>
+    <field name="model">mail.mass_mailing.contact</field>
+    <field name="inherit_id" ref="mass_mailing_partner.view_mail_mass_mailing_contact_search"/>
+    <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+            <field name="commercial_name"/>
+        </field>
+        <filter name="group_partner" position="after">
+            <filter string="Empresa"
+                    name="group_commercial_name"
+                    context="{'group_by': 'commercial_name'}"/>
+        </filter>
+    </field>
+</record>
+
+</odoo>
