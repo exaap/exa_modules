@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2014 Odoo 8 - M.Hagag@DVIT.ME - http://dvit.me/ 
+     Copyright 2018 Guillermo Montoya <Github@guillermm>
+     Copyright 2018 Joan Marín <Github@joanodoo>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+		<record id="account_invoice_form" model="ir.ui.view">
+		<field name="name">account.invoice.form</field>
+		<field name="model">account.invoice</field>
+		<field name="inherit_id" ref="account.invoice_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='price_unit']" position="after">
+				<field name="total_wo_disc" class="oe_inline" groups="sale.group_discount_per_so_line"/>
+			</xpath>
+			<xpath expr="//field[@name='discount']" position="after">
+				<field name="disc_amount" class="oe_inline" groups="sale.group_discount_per_so_line"/>
+			</xpath>
+			<xpath expr="//field[@name='amount_untaxed']" position="before">
+				<field name="total_b4_disc"
+					widget="monetary"
+					options="{'currency_field': 'currency_id'}"
+					groups="sale.group_discount_per_so_line"/>
+				<field name="disc_total"
+					widget="monetary"
+					options="{'currency_field': 'currency_id'}"
+					groups="sale.group_discount_per_so_line"/>
+			</xpath>
+		</field>
+		</record>
+	</data>
+</odoo>
