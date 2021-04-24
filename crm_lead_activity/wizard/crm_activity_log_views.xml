@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_activity_log_view_form" model="ir.ui.view">
+        <field name="name">Title action text and date action in register activity</field>
+        <field name="model">crm.activity.log</field>
+        <field name="inherit_id" ref="crm.crm_activity_log_view_form"/>
+        <field eval="18" name="priority"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="title_action" position="replace">
+                    <field name="date_action"/>
+                </field>
+
+                <field name="note" position="before">
+                    <label for="title_action"/>
+                    <field name="title_action" widget="text" placeholder="e.g. Discuss proposal"/>
+                    <label for="note"/>
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <record id="crm_activity_log_view_form_schedule" model="ir.ui.view">
+        <field name="name">Title action text in register activity schedule</field>
+        <field name="model">crm.activity.log</field>
+        <field name="inherit_id" ref="crm.crm_activity_log_view_form_schedule"/>
+        <field eval="18" name="priority"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="title_action" position="replace"></field>
+
+                <xpath expr="//group[1]" position="before">
+                    <label for="title_action"/>
+                    <field name="title_action" widget="text" placeholder="e.g. Discuss proposal"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
