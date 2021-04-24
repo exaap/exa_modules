@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_simple_form" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='function']" position="before">
+                    <field name="birth_or_foundation_date"
+                        string="Birth Date"
+                        attrs="{'invisible': ['|', ('is_company', '=', True), ('type', '!=', 'contact')]}"/>
+                    <field name="related_birth_or_foundation_date"
+                        attrs="{'invisible': ['|', ('is_company', '=', False), ('type', '!=', 'contact')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Main form -->
+                <xpath expr="//field[@name='function']" position="before">
+                    <field name="birth_or_foundation_date"
+                        string="Birth Date"
+                        attrs="{'invisible': ['|', ('is_company', '=', True), ('type', '!=', 'contact')]}"/>
+                    <field name="related_birth_or_foundation_date"
+                        attrs="{'invisible': ['|', ('is_company', '=', False), ('type', '!=', 'contact')]}"/>
+                </xpath>
+                <!-- Inner contact form of child_ids -->
+                <xpath expr="//field[@name='child_ids']/form//field[@name='function']"
+                    position="before">
+                    <field name="birth_or_foundation_date"
+                        string="Birth Date"
+                        attrs="{'invisible': [('type', '!=', 'contact')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
