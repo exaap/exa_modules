@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_stock_inventory_line
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-26 15:20+0000\n"
+"PO-Revision-Date: 2021-04-26 15:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_stock_inventory_line
+#: model:ir.model.fields,help:product_stock_inventory_line.field_stock_inventory_line__date
+msgid "If the inventory adjustment is not validated, date at which the theoritical quantities have been checked.\n"
+"If the inventory adjustment is validated, date at which the inventory adjustment has been validated."
+msgstr "La fecha que será usada para la comprobación del nivel de existencias de los productos y la validación del movimiento de existencias relacionado con este inventario."
+
+#. module: product_stock_inventory_line
+#: model:ir.model.fields,field_description:product_stock_inventory_line.field_stock_inventory_line__date
+msgid "Inventory Date"
+msgstr "Fecha del inventario"
+
+#. module: product_stock_inventory_line
+#: model:ir.model,name:product_stock_inventory_line.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Línea de inventario"
+
+#. module: product_stock_inventory_line
+#: model:ir.model.fields,field_description:product_stock_inventory_line.field_product_product__inventory_line_ids
+#: model:ir.model.fields,field_description:product_stock_inventory_line.field_product_template__inventory_line_ids
+#: model_terms:ir.ui.view,arch_db:product_stock_inventory_line.view_template_property_form
+msgid "Inventory Lines"
+msgstr "Líneas de inventario"
+
+#. module: product_stock_inventory_line
+#: model:ir.model,name:product_stock_inventory_line.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_stock_inventory_line
+#: model:ir.model,name:product_stock_inventory_line.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
