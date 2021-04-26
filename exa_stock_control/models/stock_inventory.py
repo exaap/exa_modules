@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2021 Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 from datetime import datetime
 from odoo import models, fields, api, _
 
@@ -21,6 +22,7 @@ class StockInventory(models.Model):
 
     @api.multi
     def _get_inventory_lines_values(self):
+        vals = super(StockInventory, self)._get_inventory_lines_values()
         locations = self.env['stock.location'].search([
             ('id', 'child_of', [self.location_id.id])
         ])
@@ -128,7 +130,4 @@ class StockInventory(models.Model):
             exhausted_vals = self._get_exhausted_inventory_line(
                 products_to_filter, quant_products)
             vals.extend(exhausted_vals)
-        if vals:
-            return vals
-        else:
-            return super(StockInventory, self)._get_inventory_lines_values()
+        return vals
