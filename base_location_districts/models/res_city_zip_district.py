@@ -17,6 +17,6 @@ class ResCityZipDistrict(models.Model):
     def name_get(self):
         res = []
         for district in self:
-            name = district.name + ' [' + district.zip_id.city + ']'
+            name = district.name + ' [' + district.zip_id.name + ']'
             res.append((district.id, name))
         return res
