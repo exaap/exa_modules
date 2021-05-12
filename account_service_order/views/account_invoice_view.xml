@@ -11,6 +11,8 @@
                             <field name="has_service_order" required="1"/>
                             <field name="has_more_service_orders" attrs="{'readonly': [('has_service_order', '=', 'no')]}"/>
                             <field name="service_order_id" domain="[('state', '=', 'open'), ('partner_id', '=', partner_id)]" attrs="{'required': [('has_service_order', '=', 'yes'), ('has_more_service_orders', '!=', True)], 'readonly':[('has_more_service_orders', '=', True)]}" options='{"no_create": True}'/>
+                            <field name="duca" readonly="1"/>
+                            <field name="reference_service" readonly="1"/>
                         </group>
                         <field name="service_order_move_lines" mode="tree" readonly="1">
                             <tree string="Journal Items">
