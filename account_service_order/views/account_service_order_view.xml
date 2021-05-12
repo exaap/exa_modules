@@ -6,6 +6,8 @@
         <field name="arch" type="xml">
             <tree string="Service Orders" decoration-info="state=='open'" decoration-muted="state=='cancel'" default_order="id desc">
                 <field name="name"/>
+                <field name="duca"/>
+                <field name="reference"/>
                 <field name="partner_id"/>
                 <field name="state"/>
                 <field name="last_created"/>
@@ -28,10 +30,13 @@
                     <group>
                         <group>
                             <field name="name"/>
+                            <field name="duca"/>
+                            <field name="reference"/>
                             <field name="number_x" invisible="1"/>
                             <field name="number_y" invisible="1"/>
                             <field name="number_y_set" invisible="1"/>
                             <field name="has_number_y" attrs="{'invisible':[('number_y_set', '=', True)]}"/>
+
                         </group>
                         <group>
                             <field name="partner_id" required="1" attrs="{'readonly':[('state', 'in', ('finished', 'cancel'))]}"/>

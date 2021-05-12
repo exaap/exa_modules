@@ -17,6 +17,8 @@ class AccountServiceOrder(models.Model):
     number_y = fields.Integer(string='Number Y')
     last_created = fields.Boolean(string='Last Created?', default=False)
     description = fields.Text(string='Description')
+    duca = fields.Char(string="DUCA")
+    reference = fields.Text(string="Reference")
     partner_id = fields.Many2one('res.partner',
                                  string='Customer',
                                  domain=[('customer', '=', True)])

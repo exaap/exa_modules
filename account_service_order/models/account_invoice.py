@@ -61,3 +61,6 @@ class AccountInvoice(models.Model):
         comodel_name='account.move.line',
         string='Journal Items',
         compute='_compute_move_lines')
+    duca = fields.Char(string="DUCA", related="service_order_id.duca")
+    reference_service = fields.Text(string="Reference",
+                                    related="service_order_id.reference")
