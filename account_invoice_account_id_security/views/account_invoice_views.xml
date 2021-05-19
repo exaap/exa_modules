@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group/field[@name='account_id']"
+                position="attributes">
+                <attribute name="groups">account_invoice_account_id_security.group_invoice_choose_account</attribute>
+            </xpath>
+		</field>
+    </record>
+    
+    <record id="invoice_supplier_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[2]/group/group/field[@name='account_id']"
+                position="attributes">
+                <attribute name="groups">account_invoice_account_id_security.group_invoice_choose_account</attribute>
+            </xpath>
+		</field>
+	</record>
+</odoo>
