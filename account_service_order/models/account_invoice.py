@@ -61,6 +61,10 @@ class AccountInvoice(models.Model):
         comodel_name='account.move.line',
         string='Journal Items',
         compute='_compute_move_lines')
-    duca = fields.Char(string="DUCA", related="service_order_id.duca")
-    reference_service = fields.Text(string="Reference",
-                                    related="service_order_id.reference")
+    duca = fields.Char(string="No. DUCA", related="service_order_id.duca")
+    dmti = fields.Char(string="No. DMTI", related="service_order_id.dmti")
+    dm = fields.Char(string="No. DM", related="service_order_id.dm")
+    sv = fields.Char(string="No. SV", related="service_order_id.sv")
+    bl = fields.Char(string="No. BL", related="service_order_id.bl")
+    awb = fields.Char(string="No. AWB", related="service_order_id.awb")
+    cp = fields.Char(string="No. CP", related="service_order_id.cp")
