@@ -9,7 +9,7 @@ from odoo.exceptions import UserError
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    @api.multi
+    @api.model
     def create(self, vals):
         if self.default_code:
             existing_product = self.env['product.product'].search([
