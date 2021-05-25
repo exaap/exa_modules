@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_risk_allow_edit_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-01 18:52+0000\n"
+"PO-Revision-Date: 2021-02-01 18:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_risk_allow_edit_security
+#: model:res.groups,name:partner_risk_allow_edit_security.group_partner_risk_allow_edit
+msgid "Allow Edit Risk in Partner"
+msgstr "Permitir Editar Riesgo en Contacto"
+
+#. module: partner_risk_allow_edit_security
+#: model:ir.model,name:partner_risk_allow_edit_security.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
