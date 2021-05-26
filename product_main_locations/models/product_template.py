@@ -26,7 +26,7 @@ class ProductTemplate(models.Model):
             ])
 
             for stock_quant_id in stock_quant_ids:
-                qty_avl_main_locations += stock_quant_id.qty
+                qty_avl_main_locations += stock_quant_id.quantity
 
             product.qty_avl_main_locations = qty_avl_main_locations
 
