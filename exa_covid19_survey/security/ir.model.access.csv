@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_exa_covid19_survey_pollster,exa_covid19_survey.covid19_partner_survey,model_covid19_partner_survey,exa_covid19_survey.group_covid19_survey_pollster,1,1,1,1
+access_exa_covid19_survey_reviewer,exa_covid19_survey.covid19_partner_survey,model_covid19_partner_survey,exa_covid19_survey.group_covid19_survey_reviewer,1,0,0,0
