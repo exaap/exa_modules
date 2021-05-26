@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_invoice_line_tree" model="ir.ui.view">
+        <field name="name">account.invoice.line.tree</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="invoice_id" readonly="1"/>
+                <field name="commission_free"/>
+                <field name="agents" attrs="{'readonly': [('commission_free', '=', True)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_account_invoice_line">
+        <field name="name">Invoices</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Invoices" id="menu_account_invoice_line" parent="sale_commission.menu_sale_commissions_management" action="action_account_invoice_line"/>
+
+    <record id="account_invoice_line_search" model="ir.ui.view">
+        <field name="name">account_invoice_line.search</field>
+        <field name="model">account.invoice.line</field>
+        <field name="arch" type="xml">
+            <search string="Line Invoices">
+                <field name="invoice_id" filter_domain="[('invoice_id.number', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>
