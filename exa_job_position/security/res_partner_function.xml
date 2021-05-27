@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.model.access" id="res_partner_job_position_viewer">
+        <field name="name">res.partner.function viewer</field>
+        <field name="model_id" ref="model_res_partner_function"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    
+    <record model="ir.model.access" id="res_partner_job_position_manager">
+        <field name="name">res.partner.function manager</field>
+        <field name="model_id" ref="model_res_partner_function"/>
+        <field name="group_id" ref="base.group_partner_manager"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+</odoo>
