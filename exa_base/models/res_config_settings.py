@@ -5,7 +5,7 @@
 
 from odoo import api, models, _
 from odoo.exceptions import AccessError
-from odoo.addons.base import ResConfigModuleInstallationMixin
+from odoo.addons.base.models.res_config import ResConfigModuleInstallationMixin
 
 
 class ResConfigSettings(models.TransientModel,
