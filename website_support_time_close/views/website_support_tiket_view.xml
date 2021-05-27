@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_support_ticket_view_form " model="ir.ui.view">
+        <field name="model">website.support.ticket</field>
+        <field name="inherit_id" ref="website_support.website_support_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='close_time']" position="after">
+                <field name="create_date" />
+                <field name="time_to_close_days" />
+                <field name="time_to_close_hors" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
