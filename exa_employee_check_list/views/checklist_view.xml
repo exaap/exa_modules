@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_view_hr_view_department_form" model="ir.ui.view">
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <field name="employee_checklist_id" context="{'default_department_id': id}">
+                    <tree>
+                        <field name="name" />
+                        <field name="document_type" />
+                        <field name="department_id" widget="many2many_tags" />
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_view_id_inherit_module_name" model="ir.ui.view">
+        <field name="model">employee.checklist</field>
+        <field name="inherit_id" ref="employee_documents_expiry.employee_check_list_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='document_type']" position="after">
+                <field name="department_id" widget="many2many_tags" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_view_hr_employee_inherit_form_view" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="employee_check_list.hr_employee_inherit_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='entry_checklist']" position="attributes">
+                <attribute name="domain">['&amp;',('department_id', '=',department_id), ('document_type', '=', 'entry')]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='exit_checklist']" position="attributes">
+                <attribute name="domain">['&amp;',('department_id', '=',department_id), ('document_type', '=', 'exit')]</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
