@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="covid19_survey_form" model="ir.ui.view">
+        <field name="name">covid19_survey_form</field>
+        <field name="model">covid19.partner.survey</field>
+        <field name="arch" type="xml">
+            <form string="Maintenance Request">
+                <header>
+                   
+                </header>
+                <sheet>
+                    <div>
+                        <label for="partner_id" class="oe_edit_only" string="Empresa/Persona"/>
+                        <h2>
+                            <field name="partner_id" style="width:98%%"/>
+                        </h2>
+                    </div><br/>
+                    <group string="Datos de la Empresa/Persona">
+                            <field name="partner_ident_type_id"/>
+                            <field name="partner_identification"/>
+                            <field name="partner_type" placeholder="Cliente, Proveedor, Contratista, Otro"/>
+                            <field name="partner_contact_phone"/>
+                    </group>
+                    <sheet >
+                    <div>
+                        <label for="partner_person_id"/><br/>
+                        <field name="partner_person_id" options="{'no_create': True, 'no_create_edit':True, 'no_open': True}" style="width:30%%" nolabel="1" domain="[('person_type','=','2')]"/>
+                    </div><br/>
+                    <div>
+                        <label for="first_name"/><br/>
+                        <field name="first_name" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="last_name" /><br/>
+                        <field name="last_name" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="document_type_id" /><br/>
+                        <field name="document_type_id" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="identification_document" /><br/>
+                        <field name="identification_document" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="contact_phone" /><br/>
+                        <field name="contact_phone" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="partner_country_id" /><br/>
+                        <field name="partner_country_id" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="temperature" /><br/>
+                        <field name="temperature" style="width:30%%" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="mask" /><br/>
+                        <field name="mask" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="question_1" /><br/>
+                        <field name="question_1" nolabel="1"/>
+                    </div><br/>
+                    <div>
+                        <label for="question_2"/><br/>
+                        <field name="question_2" nolabel="1"/>
+                    </div>
+                    <div><br/>
+                        <label for="question_3" /><br/>
+                        <field name="question_3" nolabel="1"/>
+                    </div>
+                    </sheet>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="covid19_survey_tree" model="ir.ui.view">
+        <field name="name">covid19_survey_tree</field>
+        <field name="model">covid19.partner.survey</field>
+        <field name="arch" type="xml">
+            <tree string="Respuestas" colors="orange:temperature>=37.4">
+                <field name="complete_name" string="Nombre Visitante"/>
+                <field name="contact_phone" string="Tel. Contacto"/>
+                <field name="partner_id" string="Empresa/Persona"/>
+                <field name="create_uid" string="Encuestador"/>
+                <field name="write_date" string="Hora Ingreso"/>
+                <field name="temperature" string="Temperatura"/> 
+            </tree>
+        </field>
+    </record>
+
+    <record id="covid19_survey_action" model="ir.actions.act_window">
+        <field name="name">COVID19 Encuesta</field>
+        <field name="res_model">covid19.partner.survey</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="covid19_survey_tree"/>
+        <!--<field name="context"></field>-->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Clic para llenar su primera encuesta de Covid19
+            </p><p>
+                Si tiene alguna dificultad por favor cree un ticket para el área de sistemas
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_covid19_survey"
+        name="COVID-19 Encuestas"
+        web_icon="exa_covid19_survey,static/description/icon.png"
+        sequence="110"
+        groups="exa_covid19_survey.group_covid19_survey_pollster,exa_covid19_survey.group_covid19_survey_reviewer"
+        />
+    
+    <menuitem
+        id="menu_covid19_survey_child"
+        name="Encuesta a Terceros"
+        parent="menu_covid19_survey"
+        action="covid19_survey_action"
+        groups="exa_covid19_survey.group_covid19_survey_pollster,exa_covid19_survey.group_covid19_survey_reviewer"
+        sequence="0"/>
+</odoo>
