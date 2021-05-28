@@ -10,7 +10,7 @@ class ResPartner(models.Model):
 
     zone_id = fields.Many2one(comodel_name='res.city.zip.zone', string='Zone')
     zone_group_id = fields.Many2one(compute='_compute_zone_group',
-                                    comodel_name='res.better.zip.zone.groups',
+                                    comodel_name='res.city.zip.zone.groups',
                                     string="Zone Group",
                                     store=True)
 
