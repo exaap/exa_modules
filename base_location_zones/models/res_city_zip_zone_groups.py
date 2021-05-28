@@ -10,6 +10,5 @@ class ResCityZipZoneGroups(models.Model):
 
     name = fields.Char(string='Zone Group', size=64)
     zone_ids = fields.Many2many(comodel_name='res.city.zip.zone',
-                                relation='zone_and_zonegroup_relation',
                                 string='Zones',
                                 ondelete='cascade')
