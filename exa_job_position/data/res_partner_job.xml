@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="1">
+
+		<record id="manager" model="res.partner.function">
+			<field name="name">Gerente</field>
+			<field name="active" eval="True"/>
+		</record>
+
+		<record id="owner" model="res.partner.function">
+			<field name="name">Propietario</field>
+			<field name="active" eval="True"/>
+		</record>
+
+		<record id="administrator" model="res.partner.function">
+			<field name="name">Administrador</field>
+			<field name="active" eval="True"/>
+		</record>
+
+		<record id="purchase_analyst" model="res.partner.function">
+			<field name="name">Analista de compras</field>
+			<field name="active" eval="True"/>
+		</record>
+
+        <record id="accounting" model="res.partner.function">
+			<field name="name">Contabilidad</field>
+			<field name="active" eval="True"/>
+		</record>
+
+        <record id="seller" model="res.partner.function">
+			<field name="name">Vendedor</field>
+			<field name="active" eval="True"/>
+		</record>
+
+        <record id="technician" model="res.partner.function">
+			<field name="name">Mecánico</field>
+			<field name="active" eval="True"/>
+		</record>
+
+        <record id="manpower" model="res.partner.function">
+			<field name="name">Jefe Taller / Mantenimiento / Producción / Ingeniero</field>
+			<field name="active" eval="True"/>
+		</record>
+
+	</data>
+</odoo>
