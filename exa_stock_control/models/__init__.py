@@ -5,3 +5,4 @@
 from . import stock_inventory
 from . import product_template
 from . import stock_inventory_line
+from . import stock_picking
