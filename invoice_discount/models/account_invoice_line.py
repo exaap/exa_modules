@@ -19,8 +19,9 @@ class AccountInvoiceLine(models.Model):
     @api.multi
     @api.depends('price_unit', 'discount', 'quantity')
     def _discount_line(self):
-        self.disc_amount = self.price_unit * (
-            (self.discount or 0.0) / 100.0) * self.quantity
+        for record in self:
+            record.disc_amount = record.price_unit * (
+                (record.discount or 0.0) / 100.0) * record.quantity
 
     total_wo_disc = fields.Float(string='Total',
                                  compute='_total_line',
@@ -30,4 +31,5 @@ class AccountInvoiceLine(models.Model):
     @api.multi
     @api.depends('price_unit', 'quantity')
     def _total_line(self):
-        self.total_wo_disc = self.price_unit * self.quantity
+        for record in self:
+            record.total_wo_disc = record.price_unit * record.quantity
